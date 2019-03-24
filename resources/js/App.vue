@@ -1,5 +1,5 @@
 <template>
-    <v-app class="grey lighten-4" transition="slide-x-transition">
+    <v-app class="white">
         <Navbar />
         <v-content class="mx-4 mb-4">
             <router-view></router-view>

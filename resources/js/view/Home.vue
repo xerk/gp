@@ -3,7 +3,7 @@
         <v-layout row wrap align-center>
             <v-flex xs12 sm12 md6>
                 <v-container class="mt-5">
-                    <h1 class="font-weight-light display-2 my-4 greyd1--text">SOS Application</h1>
+                    <h1 class="font-weight-medium display-2 my-4 text-uppercase greyd1--text">SOS Application</h1>
                     <p class="grey--text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam voluptatem dolor dolores, iusto, odio a eos minus saepe voluptates quia rem animi soluta quod, hic sunt tenetur ratione excepturi reiciendis.</p>
                     <v-btn outline color="primary">
                         <v-icon left>cloud_download</v-icon>
@@ -15,8 +15,24 @@
                     </v-btn>
                 </v-container>
             </v-flex>
-            <v-flex xs12 sm12 md6>
-                <v-parallax src="https://cdn.vuetifyjs.com/images/parallax/material.jpg"></v-parallax>
+            <v-flex xs12 sm12 md6 right>
+                <v-img
+                  :src="`https://kamel-ouda.com//storage/settings/December2018/XBdxr2eBJkAyDCxibCSW.png`"
+                  :lazy-src="`https://kamel-ouda.com//storage/settings/December2018/XBdxr2eBJkAyDCxibCSW.png`"
+                    max-height="550"
+                    position="center"
+                >
+                  <template v-slot:placeholder>
+                    <v-layout
+                      fill-height
+                      align-center
+                      justify-center
+                      ma-0
+                    >
+                      <v-progress-circular indeterminate color="primary"></v-progress-circular>
+                    </v-layout>
+                  </template>
+                </v-img>
             </v-flex>
         </v-layout>
         <v-container class="my-5">

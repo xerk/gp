@@ -1875,10 +1875,45 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       drawer: false,
+      drawer_2: false,
+      locales: [{
+        title: 'Enlish',
+        code: 'EN',
+        icon: 'us'
+      }, {
+        title: 'Arabic',
+        code: 'AR',
+        icon: 'eg'
+      }],
       menu: [{
         title: 'Home',
         icon: 'home',
@@ -1886,19 +1921,19 @@ __webpack_require__.r(__webpack_exports__);
       }, {
         title: 'Categories',
         icon: 'dashboard',
-        route: '/'
+        route: 'categories'
       }, {
         title: 'Features',
         icon: 'featured_play_list',
-        route: '/'
+        route: 'features'
       }, {
         title: 'Contact Us',
         icon: 'mail',
-        route: '/'
+        route: 'contact'
       }, {
         title: 'About',
         icon: 'contact_support',
-        route: '/'
+        route: 'about'
       }]
     };
   }
@@ -1915,6 +1950,22 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -37760,10 +37811,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "v-app",
-    {
-      staticClass: "grey lighten-4",
-      attrs: { transition: "slide-x-transition" }
-    },
+    { staticClass: "white" },
     [
       _c("Navbar"),
       _vm._v(" "),
@@ -37821,11 +37869,11 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "nav",
+    "v-app-bar",
     [
       _c(
         "v-toolbar",
-        { attrs: { flat: "", app: "" } },
+        { attrs: { flat: "", app: "", color: "white" } },
         [
           _c("v-toolbar-side-icon", {
             staticClass: "greyd1--text hidden-md-and-up",
@@ -37839,13 +37887,7 @@ var render = function() {
           _c(
             "v-toolbar-title",
             { staticClass: "text-uppercase greyd1--text" },
-            [
-              _c("span", { staticClass: "primary--text" }, [_vm._v("SOS")]),
-              _vm._v(" "),
-              _c("span", { staticClass: "font-weight-light  greyd1--text" }, [
-                _vm._v("Application")
-              ])
-            ]
+            [_c("span", { staticClass: "primary--text" }, [_vm._v("SOS")])]
           ),
           _vm._v(" "),
           _c("v-spacer"),
@@ -37853,19 +37895,25 @@ var render = function() {
           _vm._l(_vm.menu, function(item) {
             return _c(
               "div",
-              { key: item.title },
+              { key: item.title, staticClass: "hidden-sm-and-down" },
               [
                 _c(
                   "v-btn",
-                  { attrs: { flat: "", color: "primary" } },
+                  {
+                    attrs: {
+                      flat: "",
+                      ripple: { class: "primary--text" },
+                      text: "",
+                      "active-class": "primary",
+                      router: "",
+                      to: item.route
+                    }
+                  },
                   [
-                    _c("v-icon", { attrs: { left: "" } }, [
-                      _vm._v(_vm._s(item.icon))
-                    ]),
-                    _vm._v(" "),
-                    _c("span", [_vm._v(_vm._s(item.title))])
-                  ],
-                  1
+                    _c("span", { staticClass: "font-weight-regular" }, [
+                      _vm._v(_vm._s(item.title))
+                    ])
+                  ]
                 )
               ],
               1
@@ -37875,10 +37923,14 @@ var render = function() {
           _c("v-spacer"),
           _vm._v(" "),
           _c(
-            "v-tooltip",
+            "v-menu",
             {
-              staticClass: "mr-1",
-              attrs: { bottom: "" },
+              attrs: {
+                left: "",
+                bottom: "",
+                origin: "center center",
+                transition: "scale-transition"
+              },
               scopedSlots: _vm._u([
                 {
                   key: "activator",
@@ -37887,20 +37939,29 @@ var render = function() {
                     return [
                       _c(
                         "v-btn",
-                        { staticClass: "primary--text", attrs: { flat: "" } },
+                        _vm._g(
+                          { staticClass: "greyd1--text", attrs: { flat: "" } },
+                          on
+                        ),
                         [
                           _c(
                             "v-icon",
                             _vm._g(
                               {
-                                attrs: { color: "primary", left: "", dark: "" }
+                                attrs: {
+                                  color: "greyd1--text",
+                                  left: "",
+                                  dark: ""
+                                }
                               },
                               on
                             ),
                             [_vm._v("translate")]
                           ),
                           _vm._v(" "),
-                          _c("span", [_vm._v("EN")])
+                          _c("span", { staticClass: "primary--text" }, [
+                            _vm._v("EN")
+                          ])
                         ],
                         1
                       )
@@ -37909,94 +37970,253 @@ var render = function() {
                 }
               ])
             },
-            [_vm._v(" "), _c("span", [_vm._v("English")])]
-          ),
-          _vm._v(" "),
-          _c(
-            "v-tooltip",
-            {
-              staticClass: "mr-1",
-              attrs: { bottom: "" },
-              scopedSlots: _vm._u([
-                {
-                  key: "activator",
-                  fn: function(ref) {
-                    var on = ref.on
-                    return [
+            [
+              _vm._v(" "),
+              _c(
+                "v-list",
+                _vm._l(_vm.locales, function(locale) {
+                  return _c(
+                    "v-list-tile",
+                    { key: locale.title, on: { click: function() {} } },
+                    [
                       _c(
-                        "v-btn",
-                        {
-                          staticClass: "primary--text",
-                          attrs: { icon: "", flat: "" }
-                        },
+                        "v-list-tile-item",
                         [
-                          _c(
-                            "v-icon",
-                            _vm._g(
-                              { attrs: { color: "primary", dark: "" } },
-                              on
-                            ),
-                            [_vm._v("power_settings_new")]
-                          )
+                          _c("v-avatar", { attrs: { size: "32px" } }, [
+                            _c("span", {
+                              class: "flag-icon flag-icon-" + locale.icon
+                            })
+                          ]),
+                          _vm._v(" "),
+                          _c("span", [_vm._v(_vm._s(locale.title))])
                         ],
                         1
                       )
-                    ]
-                  }
-                }
-              ])
-            },
-            [_vm._v(" "), _c("span", [_vm._v("Login")])]
+                    ],
+                    1
+                  )
+                }),
+                1
+              )
+            ],
+            1
           ),
           _vm._v(" "),
           _c(
-            "v-tooltip",
-            {
-              staticClass: "mr-4",
-              attrs: { bottom: "" },
-              scopedSlots: _vm._u([
+            "div",
+            { staticClass: "hidden-sm-and-down" },
+            [
+              _c(
+                "v-tooltip",
                 {
-                  key: "activator",
-                  fn: function(ref) {
-                    var on = ref.on
-                    return [
-                      _c(
-                        "v-btn",
-                        {
-                          staticClass: "primary--text",
-                          attrs: { icon: "", flat: "" }
-                        },
-                        [
+                  staticClass: "mr-1",
+                  attrs: { bottom: "" },
+                  scopedSlots: _vm._u([
+                    {
+                      key: "activator",
+                      fn: function(ref) {
+                        var on = ref.on
+                        return [
                           _c(
-                            "v-icon",
-                            _vm._g(
-                              { attrs: { color: "primary", dark: "" } },
-                              on
-                            ),
-                            [_vm._v("person_add")]
+                            "v-btn",
+                            {
+                              staticClass: "greyd1--text",
+                              attrs: { icon: "", flat: "" }
+                            },
+                            [
+                              _c(
+                                "v-icon",
+                                _vm._g(
+                                  {
+                                    attrs: { color: "greyd1--text", dark: "" }
+                                  },
+                                  on
+                                ),
+                                [_vm._v("power_settings_new")]
+                              )
+                            ],
+                            1
                           )
-                        ],
-                        1
-                      )
-                    ]
-                  }
-                }
-              ])
-            },
-            [_vm._v(" "), _c("span", [_vm._v("Registration")])]
+                        ]
+                      }
+                    }
+                  ])
+                },
+                [_vm._v(" "), _c("span", [_vm._v("Login")])]
+              ),
+              _vm._v(" "),
+              _c(
+                "v-tooltip",
+                {
+                  staticClass: "mr-4",
+                  attrs: { bottom: "" },
+                  scopedSlots: _vm._u([
+                    {
+                      key: "activator",
+                      fn: function(ref) {
+                        var on = ref.on
+                        return [
+                          _c(
+                            "v-btn",
+                            {
+                              staticClass: "greyd1--text",
+                              attrs: { icon: "", flat: "" }
+                            },
+                            [
+                              _c(
+                                "v-icon",
+                                _vm._g(
+                                  {
+                                    attrs: { color: "greyd1--text", dark: "" }
+                                  },
+                                  on
+                                ),
+                                [_vm._v("person_add")]
+                              )
+                            ],
+                            1
+                          )
+                        ]
+                      }
+                    }
+                  ])
+                },
+                [_vm._v(" "), _c("span", [_vm._v("Registration")])]
+              ),
+              _vm._v(" "),
+              _c(
+                "v-avatar",
+                {
+                  staticClass: "pointer",
+                  attrs: { color: "greyd1", size: "32px" }
+                },
+                [
+                  _c("v-icon", { attrs: { dark: "" } }, [
+                    _vm._v("account_circle")
+                  ])
+                ],
+                1
+              )
+            ],
+            1
           ),
           _vm._v(" "),
           _c(
-            "v-avatar",
+            "v-btn",
             {
-              staticClass: "pointer",
-              attrs: { color: "primary", size: "32px" }
+              staticClass: "hidden-md-and-up",
+              attrs: { icon: "" },
+              on: {
+                click: function($event) {
+                  _vm.drawer_2 = !_vm.drawer_2
+                }
+              }
             },
-            [_c("v-icon", { attrs: { dark: "" } }, [_vm._v("account_circle")])],
+            [_c("v-icon", [_vm._v("more_vert")])],
             1
           )
         ],
         2
+      ),
+      _vm._v(" "),
+      _c(
+        "v-navigation-drawer",
+        {
+          staticClass: "primary",
+          attrs: { app: "" },
+          model: {
+            value: _vm.drawer,
+            callback: function($$v) {
+              _vm.drawer = $$v
+            },
+            expression: "drawer"
+          }
+        },
+        [
+          _c(
+            "v-list",
+            _vm._l(_vm.menu, function(link) {
+              return _c(
+                "v-list-tile",
+                { key: link.text, attrs: { router: "", to: link.route } },
+                [
+                  _c(
+                    "v-list-tile-action",
+                    [
+                      _c("v-icon", { staticClass: "white--text" }, [
+                        _vm._v(_vm._s(link.icon))
+                      ])
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-list-tile-content",
+                    [
+                      _c("v-list-tile-title", { staticClass: "white--text" }, [
+                        _vm._v(_vm._s(link.title))
+                      ])
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            }),
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-navigation-drawer",
+        {
+          staticClass: "primary",
+          attrs: { right: "", app: "" },
+          model: {
+            value: _vm.drawer_2,
+            callback: function($$v) {
+              _vm.drawer_2 = $$v
+            },
+            expression: "drawer_2"
+          }
+        },
+        [
+          _c(
+            "v-list",
+            _vm._l(_vm.menu, function(item) {
+              return _c(
+                "v-list-tile",
+                { key: item.text, attrs: { router: "", to: item.route } },
+                [
+                  _c(
+                    "v-list-tile-action",
+                    [
+                      _c("v-icon", { staticClass: "white--text" }, [
+                        _vm._v(_vm._s(item.icon))
+                      ])
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-list-tile-content",
+                    [
+                      _c("v-list-tile-title", { staticClass: "white--text" }, [
+                        _vm._v(_vm._s(item.title))
+                      ])
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            }),
+            1
+          )
+        ],
+        1
       )
     ],
     1
@@ -38044,7 +38264,7 @@ var render = function() {
                     "h1",
                     {
                       staticClass:
-                        "font-weight-light display-2 my-4 greyd1--text"
+                        "font-weight-medium display-2 my-4 text-uppercase greyd1--text"
                     },
                     [_vm._v("SOS Application")]
                   ),
@@ -38089,12 +38309,44 @@ var render = function() {
           _vm._v(" "),
           _c(
             "v-flex",
-            { attrs: { xs12: "", sm12: "", md6: "" } },
+            { attrs: { xs12: "", sm12: "", md6: "", right: "" } },
             [
-              _c("v-parallax", {
+              _c("v-img", {
                 attrs: {
-                  src: "https://cdn.vuetifyjs.com/images/parallax/material.jpg"
-                }
+                  src:
+                    "https://kamel-ouda.com//storage/settings/December2018/XBdxr2eBJkAyDCxibCSW.png",
+                  "lazy-src":
+                    "https://kamel-ouda.com//storage/settings/December2018/XBdxr2eBJkAyDCxibCSW.png",
+                  "max-height": "550",
+                  position: "center"
+                },
+                scopedSlots: _vm._u([
+                  {
+                    key: "placeholder",
+                    fn: function() {
+                      return [
+                        _c(
+                          "v-layout",
+                          {
+                            attrs: {
+                              "fill-height": "",
+                              "align-center": "",
+                              "justify-center": "",
+                              "ma-0": ""
+                            }
+                          },
+                          [
+                            _c("v-progress-circular", {
+                              attrs: { indeterminate: "", color: "primary" }
+                            })
+                          ],
+                          1
+                        )
+                      ]
+                    },
+                    proxy: true
+                  }
+                ])
               })
             ],
             1
@@ -79392,6 +79644,8 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuetify__WEBPACK_IMPORTED_MODULE_2___default.a, {
   theme: {
     primary: vuetify_es5_util_colors__WEBPACK_IMPORTED_MODULE_3___default.a.yellow.darken4,
+    primary1: vuetify_es5_util_colors__WEBPACK_IMPORTED_MODULE_3___default.a.yellow.darken3,
+    primary2: vuetify_es5_util_colors__WEBPACK_IMPORTED_MODULE_3___default.a.yellow.darken2,
     secondary: '#b0bec5',
     accent: '#8c9eff',
     error: '#b71c1c',
@@ -79759,8 +80013,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\Laravel\gp\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\Laravel\gp\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! D:\Laravel\GP\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! D:\Laravel\GP\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
