@@ -11,6 +11,9 @@
 |
 */
 
-Route::get('/', function () {
+// Route::get('/', function () {
+//     return view('layout.master');
+// });
+Route::get('/{vue_capture?}', function () {
     return view('layout.master');
-});
+})->where('vue_capture', '^(?!nova|admin|horizon).*$');

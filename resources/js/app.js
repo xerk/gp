@@ -20,7 +20,10 @@ Vue.use(Vuetify, {
       secondary: '#b0bec5',
       accent: '#8c9eff',
       error: '#b71c1c',
-      greyd1: colors.grey.darken1
+      greyd1: colors.grey.darken1,
+      greyd2: colors.grey.darken2,
+      greyd3: colors.grey.darken3,
+      greyd4: colors.grey.darken4,
     }
   })
 
