@@ -38065,10 +38065,7 @@ var render = function() {
                         [
                           _c(
                             "v-icon",
-                            _vm._g(
-                              { attrs: { color: "", left: "", dark: "" } },
-                              on
-                            ),
+                            _vm._g({ attrs: { color: "", left: "" } }, on),
                             [_vm._v("translate")]
                           ),
                           _vm._v(" "),
@@ -38087,7 +38084,6 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "v-list",
-                { attrs: { dark: "" } },
                 _vm._l(_vm.locales, function(locale) {
                   return _c(
                     "v-list-tile",

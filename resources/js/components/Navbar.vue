@@ -16,11 +16,11 @@
             <v-menu left bottom origin="center center" transition="scale-transition">
                 <template v-slot:activator="{ on }">
                     <v-btn class="" v-on="on" flat>
-                            <v-icon color="" left dark v-on="on">translate</v-icon>
+                            <v-icon color="" left v-on="on">translate</v-icon>
                             <span class="primary--text">EN</span>
                         </v-btn>
                 </template>
-                <v-list dark>
+                <v-list>
                     <v-list-tile v-for="locale in locales" :key="locale.title" avatar @click="">
                         <v-list-tile-action>
                             <v-avatar size="32px">
