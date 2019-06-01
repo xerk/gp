@@ -51,6 +51,9 @@
             </v-flex>
         </v-layout>
         <v-layout row wrap class="ma-3">
+            <v-container>
+                <h1 class="text-md-center font-weight-medium display-3 mb-4 greyd4--text">Features</h1>
+            </v-container>
             <v-flex xs12 sm12 md6 class="pa-4" overflow-x-hidden>
                 <div class="grey lighten-5 section--organize">
                     <v-container class="padding--organize">

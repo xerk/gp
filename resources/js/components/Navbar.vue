@@ -1,7 +1,7 @@
 <template>
     <nav>
         <v-toolbar app color="white" class="toolbar-shadow">
-            <v-toolbar-side-icon class=" hidden-md-and-up" @click="drawer = !drawer"></v-toolbar-side-icon>
+            <v-toolbar-side-icon class=" hidden-md-and-up" @click="drawer = true"></v-toolbar-side-icon>
             <v-toolbar-title class="text-uppercase ">
                 <span class="primary--text">SOS</span>
             </v-toolbar-title>
@@ -54,7 +54,7 @@
                     <v-icon dark>account_circle</v-icon>
                 </v-avatar>
             </div>
-            <v-btn icon class="hidden-md-and-up" @click="drawer_2 = !drawer_2">
+            <v-btn icon class="hidden-md-and-up" @click="drawer_2 = true">
                 <v-icon>more_vert</v-icon>
             </v-btn>
         </v-toolbar>
@@ -110,24 +110,24 @@
                         route: '/'
                     },
                     {
-                        title: 'Categories',
-                        icon: 'dashboard',
-                        route: 'categories'
-                    },
-                    {
                         title: 'Features',
                         icon: 'featured_play_list',
-                        route: 'features'
+                        route: '/features'
+                    },
+                    {
+                        title: 'Categories',
+                        icon: 'dashboard',
+                        route: '/categories'
                     },
                     {
                         title: 'Contact Us',
                         icon: 'mail',
-                        route: 'contact'
+                        route: '/contact'
                     },
                     {
                         title: 'About',
                         icon: 'contact_support',
-                        route: 'about'
+                        route: '/about'
                     },
                 ]
             }

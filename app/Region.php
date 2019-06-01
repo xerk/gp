@@ -14,6 +14,15 @@ class Region extends Model
 
     protected $dates = ['deleted_at'];
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'region', 'city_id'
+    ];
+
     public function city()
     {
         return $this->belongsTo('App\City', 'city_id');

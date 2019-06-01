@@ -15,6 +15,15 @@ class Worker extends Model
 
     protected $dates = ['deleted_at'];
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'user_id', 'experience', 'biography', 'price', 'files', 'category_id'
+    ];
+
     public function user()
     {
         return $this->belongsTo('App\User', 'user_id')->where('job', 1);

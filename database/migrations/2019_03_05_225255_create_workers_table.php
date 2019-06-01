@@ -10,8 +10,9 @@ class CreateWorkersTable extends Migration {
 		Schema::create('workers', function(Blueprint $table) {
 			$table->increments('id');
 			$table->bigInteger('user_id')->unsigned();
-			$table->string('experience');
-			$table->text('biography');
+			$table->integer('category_id')->unsigned();
+			$table->string('experience')->nullable();
+			$table->text('biography')->nullable();
 			$table->float('price');
 			$table->string('files')->nullable();
 			$table->timestamps();

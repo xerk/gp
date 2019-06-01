@@ -9,6 +9,7 @@ use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Eminiarts\NovaPermissions\Nova\ResourceForUser;
+use Laravel\Nova\Fields\Image;
 
 class Category extends ResourceForUser
 {
@@ -50,6 +51,10 @@ class Category extends ResourceForUser
             Text::make('Name')
             ->sortable()
             ->rules('required', 'min:3', 'max:255'),
+
+            Image::make('Image')
+            ->sortable()
+            ->rules('required'),
 
             Textarea::make('Body')->withMeta(['extraAttributes' => [
                 'placeholder' => 'Write some thing here.']

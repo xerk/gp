@@ -23,7 +23,7 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'phone', 'job', 'city_id', 'region_id', 'address_line_1', 'address_line_2'
+        'name', 'email', 'password', 'phone', 'job', 'city_id', 'region_id', 'address_line_1', 'address_line_2', 'age'
     ];
 
     /**
@@ -44,19 +44,17 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
-    /**
-     * Determines if the User is a Super admin
-     * @return null
-    */
-    public function isSuperAdmin()
-    {
-        return $this->hasRole('admin');
-    }
+   
 
 
     public function workers()
     {
         return $this->hasMany('App\Worker', 'user_id');
+    }
+
+    public function workerOrders()
+    {
+        return $this->hasMany('App\Order', 'user_id');
     }
 
     public function city()
@@ -72,5 +70,14 @@ class User extends Authenticatable implements MustVerifyEmail
     public function categories()
     {
         return $this->belongsToMany('App\Category');
+    }
+
+    public function findForPassport($username)
+    {
+        return $this->where('phone', $username)->orWhere('email', $username)->first();
+    }
+
+    public function isSuperAdmin() {
+        return true;
     }
 }

@@ -50,6 +50,8 @@ class Worker extends ResourceForUser
 
             BelongsTo::make('User')->searchable()->rules('required'),
 
+            BelongsTo::make('Category')->searchable()->rules('required'),
+
             Number::make('Experience')->min(1)->max(50)->step(0.01)->rules('required'),
 
             Money::make('Price', 'EGP')->rules('required'),

@@ -45,10 +45,10 @@ Vue.component('App', require('./App.vue').default);
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-// const router = new VueRouter({
-//     routes,
-//     mode: 'history'
-// })
+router.beforeEach((to, from, next) => {
+  document.title = to.meta.title
+  next()
+})
 const app = new Vue({
     el: '#app',
     router: router,
