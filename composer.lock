@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e62965613ed7f524ff5626ae7f9fcaaf",
+    "content-hash": "4e925efaf35a6acb7e982bb325bcf327",
     "packages": [
         {
             "name": "cakephp/chronos",
@@ -2028,6 +2028,57 @@
                 "time"
             ],
             "time": "2019-05-16T18:44:35+00:00"
+        },
+        {
+            "name": "nikaia/nova-rating-field",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nikaia/nova-rating-field.git",
+                "reference": "e7fc14297ab78dce6106ce4733e272cce40b4624"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nikaia/nova-rating-field/zipball/e7fc14297ab78dce6106ce4733e272cce40b4624",
+                "reference": "e7fc14297ab78dce6106ce4733e272cce40b4624",
+                "shasum": ""
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.11"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Nikaia\\Rating\\RatingServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Nikaia\\Rating\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nassif Bourguig",
+                    "email": "nbourguig@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Add start rating field to Laravel Nova",
+            "homepage": "https://github.com/nikaia/nova-rating-field",
+            "keywords": [
+                "Rating",
+                "field",
+                "laravel",
+                "nova"
+            ],
+            "time": "2018-09-15T15:37:01+00:00"
         },
         {
             "name": "nikic/php-parser",

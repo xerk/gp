@@ -21,6 +21,7 @@
         "laravel/tinker": "^1.0",
         "manmohanjit/nova-belongs-to-dependency": "^1.1",
         "naif/nova-push-notification": "^1.0",
+        "nikaia/nova-rating-field": "^1.0",
         "orlyapps/nova-belongsto-depend": "^0.0.8",
         "vyuldashev/nova-money-field": "^1.3"
     },

@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use Nikaia\Rating\Rating;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Textarea;
@@ -48,6 +49,8 @@ class Comment extends ResourceForUser
             BelongsTo::make('User'),
 
             BelongsTo::make('User Send', 'userSend', User::class),
+            
+            Rating::make('Rating')->min(0)->max(5)->increment(0.5)->hideFromIndex(),
 
             Textarea::make('body')->rules('required'),
 

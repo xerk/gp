@@ -5,47 +5,119 @@
                 <h1 class="font-weight-medium display-3 mb-4 greyd4--text">Features</h1>
             </v-container>
         </v-layout>
-        <v-layout row wrap class="ma-3">
-            <v-flex xs12 sm12 md6 class="pa-4" overflow-x-hidden>
-                <div class="grey lighten-5 section--organize">
-                    <v-container class="padding--organize">
-                        <h1 class="font-weight-medium display-2 mb-4 greyd4--text">Stay organized instantly</h1>
-                        <p class="greyd4--text subheading">See what’s new at a glance, and decide what you want to read
-                            and
-                            respond to.</p>
-                    </v-container>
-                    <div style="">
-                        <v-img
-                            :src="`https://lh3.googleusercontent.com/zG9tmtU51B7DAJxWqj5dSc32bZty6C5mo48vp1Tozqucoo379R5Gz_RDrIfxTy5wF_BZ5n-5M85S9mF_DICltakJI__JDuMhhzStsw=w0`"
-                            :lazy-src="`https://lh3.googleusercontent.com/zG9tmtU51B7DAJxWqj5dSc32bZty6C5mo48vp1Tozqucoo379R5Gz_RDrIfxTy5wF_BZ5n-5M85S9mF_DICltakJI__JDuMhhzStsw=w0`"
-                            >
-                            <template v-slot:placeholder>
-                                <v-layout fill-height align-center justify-center ma-0>
-                                    <v-progress-circular indeterminate color="primary"></v-progress-circular>
-                                </v-layout>
-                            </template>
-                        </v-img>
+        <section>
+            <v-layout column wrap class="my-5" align-center>
+                <v-flex xs12 sm4 class="my-3">
+                    <div class="text-xs-center">
+                        <h2 class="headline">The best way to share your amazing stuff</h2>
+                        <span class="subheading">
+                            No more restrictions, no more limits
+                        </span>
                     </div>
-                </div>
-            </v-flex>
-            <v-flex xs12 sm12 md6 right class="pa-4" overflow-x-hidden>
-                <div class="grey lighten-5 section--organize">
-                    <v-container class="padding--organize">
-                        <h1 class="font-weight-medium display-2 mb-4 greyd4--text">Stay organized instantly</h1>
-                        <p class="greyd4--text subheading">Get nudges that remind you to follow up and respond to messages, so that nothing slips through the cracks.</p>
+                </v-flex>
+                <v-flex xs12>
+                    <v-container grid-list-xl>
+                        <v-layout row wrap align-center>
+                            <v-flex xs12 md4>
+                                <v-card class="elevation-0 transparent">
+                                    <v-card-text class="text-xs-center">
+                                        <v-icon x-large class="blue--text text--lighten-2">public</v-icon>
+                                    </v-card-text>
+                                    <v-card-title primary-title class="layout justify-center">
+                                        <div class="headline text-xs-center">Reach the world</div>
+                                    </v-card-title>
+                                    <v-card-text>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse architecto
+                                        adipisci at. Beatae accusantium nulla quia provident voluptas libero tempore
+                                        sapiente atque dicta, voluptates repudiandae magni, voluptatum molestiae nostrum
+                                        id.
+                                    </v-card-text>
+                                </v-card>
+                            </v-flex>
+                            <v-flex xs12 md4>
+                                <v-card class="elevation-0 transparent">
+                                    <v-card-text class="text-xs-center">
+                                        <v-icon x-large class="blue--text text--lighten-2">flash_on</v-icon>
+                                    </v-card-text>
+                                    <v-card-title primary-title class="layout justify-center">
+                                        <div class="headline">Fast feedback</div>
+                                    </v-card-title>
+                                    <v-card-text>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque vero quae
+                                        voluptates quisquam hic. Fugit eum similique eveniet architecto optio doloribus
+                                        accusantium esse vel ipsam doloremque et nesciunt, eius id.
+                                    </v-card-text>
+                                </v-card>
+                            </v-flex>
+                            <v-flex xs12 md4>
+                                <v-card class="elevation-0 transparent">
+                                    <v-card-text class="text-xs-center">
+                                        <v-icon x-large class="blue--text text--lighten-2">share</v-icon>
+                                    </v-card-text>
+                                    <v-card-title primary-title class="layout justify-center">
+                                        <div class="headline text-xs-center">Create new connections</div>
+                                    </v-card-title>
+                                    <v-card-text>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error delectus minus
+                                        deleniti, nam placeat temporibus, ducimus consequatur perspiciatis accusantium
+                                        reprehenderit voluptatem laboriosam saepe qui dolorum autem deserunt maiores,
+                                        facilis dicta.
+                                    </v-card-text>
+                                </v-card>
+                            </v-flex>
+                            <v-flex xs12 md4>
+                                <v-card class="elevation-0 transparent">
+                                    <v-card-text class="text-xs-center">
+                                        <v-icon x-large class="blue--text text--lighten-2">share</v-icon>
+                                    </v-card-text>
+                                    <v-card-title primary-title class="layout justify-center">
+                                        <div class="headline text-xs-center">Create new connections</div>
+                                    </v-card-title>
+                                    <v-card-text>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error delectus minus
+                                        deleniti, nam placeat temporibus, ducimus consequatur perspiciatis accusantium
+                                        reprehenderit voluptatem laboriosam saepe qui dolorum autem deserunt maiores,
+                                        facilis dicta.
+                                    </v-card-text>
+                                </v-card>
+                            </v-flex>
+                            <v-flex xs12 md4>
+                                <v-card class="elevation-0 transparent">
+                                    <v-card-text class="text-xs-center">
+                                        <v-icon x-large class="blue--text text--lighten-2">share</v-icon>
+                                    </v-card-text>
+                                    <v-card-title primary-title class="layout justify-center">
+                                        <div class="headline text-xs-center">Create new connections</div>
+                                    </v-card-title>
+                                    <v-card-text>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error delectus minus
+                                        deleniti, nam placeat temporibus, ducimus consequatur perspiciatis accusantium
+                                        reprehenderit voluptatem laboriosam saepe qui dolorum autem deserunt maiores,
+                                        facilis dicta.
+                                    </v-card-text>
+                                </v-card>
+                            </v-flex>
+                            <v-flex xs12 md4>
+                                <v-card class="elevation-0 transparent">
+                                    <v-card-text class="text-xs-center">
+                                        <v-icon x-large class="blue--text text--lighten-2">share</v-icon>
+                                    </v-card-text>
+                                    <v-card-title primary-title class="layout justify-center">
+                                        <div class="headline text-xs-center">Create new connections</div>
+                                    </v-card-title>
+                                    <v-card-text>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error delectus minus
+                                        deleniti, nam placeat temporibus, ducimus consequatur perspiciatis accusantium
+                                        reprehenderit voluptatem laboriosam saepe qui dolorum autem deserunt maiores,
+                                        facilis dicta.
+                                    </v-card-text>
+                                </v-card>
+                            </v-flex>
+                        </v-layout>
                     </v-container>
-                    <v-img
-                        :src="`https://lh3.googleusercontent.com/wlf842vsNrbW70WRloE0LzJVOJfoL4lYMbqOEebLudfLr91bLou7Sb6Hu7f5C_uP9femGOjfLdns4B9q5rdzVBHx9NIGvOayPqbvRQ=w0`"
-                        :lazy-src="`https://lh3.googleusercontent.com/wlf842vsNrbW70WRloE0LzJVOJfoL4lYMbqOEebLudfLr91bLou7Sb6Hu7f5C_uP9femGOjfLdns4B9q5rdzVBHx9NIGvOayPqbvRQ=w0`">
-                        <template v-slot:placeholder>
-                            <v-layout fill-height align-center justify-center ma-0>
-                                <v-progress-circular indeterminate color="primary"></v-progress-circular>
-                            </v-layout>
-                        </template>
-                    </v-img>
-                </div>
-            </v-flex>
-        </v-layout>
+                </v-flex>
+            </v-layout>
+        </section>
     </div>
 </template>
 <script>

@@ -1,5 +1,29 @@
 <template>
     <nav>
+        <v-navigation-drawer temporary absolute app v-model="drawer" fixed class="primary">
+            <v-list>
+                <v-list-tile v-for="link in menu" :key="link.text" router :to="link.route">
+                    <v-list-tile-action>
+                        <v-icon class="white--text">{{link.icon}}</v-icon>
+                    </v-list-tile-action>
+                    <v-list-tile-content>
+                        <v-list-tile-title class="white--text">{{ link.title }}</v-list-tile-title>
+                    </v-list-tile-content>
+                </v-list-tile>
+            </v-list>
+        </v-navigation-drawer>
+        <v-navigation-drawer temporary absolute right app v-model="drawer_2" fixed class="primary">
+            <v-list>
+                <v-list-tile v-for="item in menu" :key="item.text" router :to="item.route">
+                    <v-list-tile-action>
+                        <v-icon class="white--text">{{item.icon}}</v-icon>
+                    </v-list-tile-action>
+                    <v-list-tile-content>
+                        <v-list-tile-title class="white--text">{{ item.title }}</v-list-tile-title>
+                    </v-list-tile-content>
+                </v-list-tile>
+            </v-list>
+        </v-navigation-drawer>
         <v-toolbar app color="white" class="toolbar-shadow">
             <v-toolbar-side-icon class=" hidden-md-and-up" @click="drawer = true"></v-toolbar-side-icon>
             <v-toolbar-title class="text-uppercase ">
@@ -58,31 +82,6 @@
                 <v-icon>more_vert</v-icon>
             </v-btn>
         </v-toolbar>
-
-        <v-navigation-drawer app v-model="drawer" class="primary">
-            <v-list>
-                <v-list-tile v-for="link in menu" :key="link.text" router :to="link.route">
-                    <v-list-tile-action>
-                        <v-icon class="white--text">{{link.icon}}</v-icon>
-                    </v-list-tile-action>
-                    <v-list-tile-content>
-                        <v-list-tile-title class="white--text">{{ link.title }}</v-list-tile-title>
-                    </v-list-tile-content>
-                </v-list-tile>
-            </v-list>
-        </v-navigation-drawer>
-        <v-navigation-drawer right app v-model="drawer_2" class="primary">
-            <v-list>
-                <v-list-tile v-for="item in menu" :key="item.text" router :to="item.route">
-                    <v-list-tile-action>
-                        <v-icon class="white--text">{{item.icon}}</v-icon>
-                    </v-list-tile-action>
-                    <v-list-tile-content>
-                        <v-list-tile-title class="white--text">{{ item.title }}</v-list-tile-title>
-                    </v-list-tile-content>
-                </v-list-tile>
-            </v-list>
-        </v-navigation-drawer>
     </nav>
 </template>
 

@@ -1900,7 +1900,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2117,6 +2116,78 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -38336,6 +38407,106 @@ var render = function() {
     "nav",
     [
       _c(
+        "v-navigation-drawer",
+        {
+          staticClass: "primary",
+          attrs: { temporary: "", absolute: "", app: "", fixed: "" },
+          model: {
+            value: _vm.drawer,
+            callback: function($$v) {
+              _vm.drawer = $$v
+            },
+            expression: "drawer"
+          }
+        },
+        [
+          _c(
+            "v-list",
+            _vm._l(_vm.menu, function(link) {
+              return _c(
+                "v-list-tile",
+                { key: link.text, attrs: { router: "", to: link.route } },
+                [
+                  _c(
+                    "v-list-tile-action",
+                    [
+                      _c("v-icon", { staticClass: "white--text" }, [
+                        _vm._v(_vm._s(link.icon))
+                      ])
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-list-tile-content",
+                    [
+                      _c("v-list-tile-title", { staticClass: "white--text" }, [
+                        _vm._v(_vm._s(link.title))
+                      ])
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            }),
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-navigation-drawer",
+        {
+          staticClass: "primary",
+          attrs: { temporary: "", absolute: "", right: "", app: "", fixed: "" },
+          model: {
+            value: _vm.drawer_2,
+            callback: function($$v) {
+              _vm.drawer_2 = $$v
+            },
+            expression: "drawer_2"
+          }
+        },
+        [
+          _c(
+            "v-list",
+            _vm._l(_vm.menu, function(item) {
+              return _c(
+                "v-list-tile",
+                { key: item.text, attrs: { router: "", to: item.route } },
+                [
+                  _c(
+                    "v-list-tile-action",
+                    [
+                      _c("v-icon", { staticClass: "white--text" }, [
+                        _vm._v(_vm._s(item.icon))
+                      ])
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-list-tile-content",
+                    [
+                      _c("v-list-tile-title", { staticClass: "white--text" }, [
+                        _vm._v(_vm._s(item.title))
+                      ])
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            }),
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
         "v-toolbar",
         { staticClass: "toolbar-shadow", attrs: { app: "", color: "white" } },
         [
@@ -38554,106 +38725,6 @@ var render = function() {
           )
         ],
         2
-      ),
-      _vm._v(" "),
-      _c(
-        "v-navigation-drawer",
-        {
-          staticClass: "primary",
-          attrs: { app: "" },
-          model: {
-            value: _vm.drawer,
-            callback: function($$v) {
-              _vm.drawer = $$v
-            },
-            expression: "drawer"
-          }
-        },
-        [
-          _c(
-            "v-list",
-            _vm._l(_vm.menu, function(link) {
-              return _c(
-                "v-list-tile",
-                { key: link.text, attrs: { router: "", to: link.route } },
-                [
-                  _c(
-                    "v-list-tile-action",
-                    [
-                      _c("v-icon", { staticClass: "white--text" }, [
-                        _vm._v(_vm._s(link.icon))
-                      ])
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-list-tile-content",
-                    [
-                      _c("v-list-tile-title", { staticClass: "white--text" }, [
-                        _vm._v(_vm._s(link.title))
-                      ])
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
-            }),
-            1
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-navigation-drawer",
-        {
-          staticClass: "primary",
-          attrs: { right: "", app: "" },
-          model: {
-            value: _vm.drawer_2,
-            callback: function($$v) {
-              _vm.drawer_2 = $$v
-            },
-            expression: "drawer_2"
-          }
-        },
-        [
-          _c(
-            "v-list",
-            _vm._l(_vm.menu, function(item) {
-              return _c(
-                "v-list-tile",
-                { key: item.text, attrs: { router: "", to: item.route } },
-                [
-                  _c(
-                    "v-list-tile-action",
-                    [
-                      _c("v-icon", { staticClass: "white--text" }, [
-                        _vm._v(_vm._s(item.icon))
-                      ])
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-list-tile-content",
-                    [
-                      _c("v-list-tile-title", { staticClass: "white--text" }, [
-                        _vm._v(_vm._s(item.title))
-                      ])
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
-            }),
-            1
-          )
-        ],
-        1
       )
     ],
     1
@@ -39189,161 +39260,375 @@ var render = function() {
       ),
       _vm._v(" "),
       _c(
-        "v-layout",
-        { staticClass: "ma-3", attrs: { row: "", wrap: "" } },
+        "section",
         [
           _c(
-            "v-flex",
+            "v-layout",
             {
-              staticClass: "pa-4",
-              attrs: { xs12: "", sm12: "", md6: "", "overflow-x-hidden": "" }
+              staticClass: "my-5",
+              attrs: { column: "", wrap: "", "align-center": "" }
             },
             [
               _c(
-                "div",
-                { staticClass: "grey lighten-5 section--organize" },
+                "v-flex",
+                { staticClass: "my-3", attrs: { xs12: "", sm4: "" } },
                 [
-                  _c("v-container", { staticClass: "padding--organize" }, [
-                    _c(
-                      "h1",
-                      {
-                        staticClass:
-                          "font-weight-medium display-2 mb-4 greyd4--text"
-                      },
-                      [_vm._v("Stay organized instantly")]
-                    ),
+                  _c("div", { staticClass: "text-xs-center" }, [
+                    _c("h2", { staticClass: "headline" }, [
+                      _vm._v("The best way to share your amazing stuff")
+                    ]),
                     _vm._v(" "),
-                    _c("p", { staticClass: "greyd4--text subheading" }, [
+                    _c("span", { staticClass: "subheading" }, [
                       _vm._v(
-                        "See what’s new at a glance, and decide what you want to read\n                        and\n                        respond to."
+                        "\n                        No more restrictions, no more limits\n                    "
                       )
                     ])
-                  ]),
-                  _vm._v(" "),
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "v-flex",
+                { attrs: { xs12: "" } },
+                [
                   _c(
-                    "div",
-                    {},
+                    "v-container",
+                    { attrs: { "grid-list-xl": "" } },
                     [
-                      _c("v-img", {
-                        attrs: {
-                          src:
-                            "https://lh3.googleusercontent.com/zG9tmtU51B7DAJxWqj5dSc32bZty6C5mo48vp1Tozqucoo379R5Gz_RDrIfxTy5wF_BZ5n-5M85S9mF_DICltakJI__JDuMhhzStsw=w0",
-                          "lazy-src":
-                            "https://lh3.googleusercontent.com/zG9tmtU51B7DAJxWqj5dSc32bZty6C5mo48vp1Tozqucoo379R5Gz_RDrIfxTy5wF_BZ5n-5M85S9mF_DICltakJI__JDuMhhzStsw=w0"
-                        },
-                        scopedSlots: _vm._u([
-                          {
-                            key: "placeholder",
-                            fn: function() {
-                              return [
-                                _c(
-                                  "v-layout",
-                                  {
-                                    attrs: {
-                                      "fill-height": "",
-                                      "align-center": "",
-                                      "justify-center": "",
-                                      "ma-0": ""
-                                    }
-                                  },
-                                  [
-                                    _c("v-progress-circular", {
-                                      attrs: {
-                                        indeterminate: "",
-                                        color: "primary"
-                                      }
-                                    })
-                                  ],
-                                  1
-                                )
-                              ]
-                            },
-                            proxy: true
-                          }
-                        ])
-                      })
+                      _c(
+                        "v-layout",
+                        { attrs: { row: "", wrap: "", "align-center": "" } },
+                        [
+                          _c(
+                            "v-flex",
+                            { attrs: { xs12: "", md4: "" } },
+                            [
+                              _c(
+                                "v-card",
+                                { staticClass: "elevation-0 transparent" },
+                                [
+                                  _c(
+                                    "v-card-text",
+                                    { staticClass: "text-xs-center" },
+                                    [
+                                      _c(
+                                        "v-icon",
+                                        {
+                                          staticClass:
+                                            "blue--text text--lighten-2",
+                                          attrs: { "x-large": "" }
+                                        },
+                                        [_vm._v("public")]
+                                      )
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-card-title",
+                                    {
+                                      staticClass: "layout justify-center",
+                                      attrs: { "primary-title": "" }
+                                    },
+                                    [
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass: "headline text-xs-center"
+                                        },
+                                        [_vm._v("Reach the world")]
+                                      )
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("v-card-text", [
+                                    _vm._v(
+                                      "\n                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse architecto\n                                    adipisci at. Beatae accusantium nulla quia provident voluptas libero tempore\n                                    sapiente atque dicta, voluptates repudiandae magni, voluptatum molestiae nostrum\n                                    id.\n                                "
+                                    )
+                                  ])
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-flex",
+                            { attrs: { xs12: "", md4: "" } },
+                            [
+                              _c(
+                                "v-card",
+                                { staticClass: "elevation-0 transparent" },
+                                [
+                                  _c(
+                                    "v-card-text",
+                                    { staticClass: "text-xs-center" },
+                                    [
+                                      _c(
+                                        "v-icon",
+                                        {
+                                          staticClass:
+                                            "blue--text text--lighten-2",
+                                          attrs: { "x-large": "" }
+                                        },
+                                        [_vm._v("flash_on")]
+                                      )
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-card-title",
+                                    {
+                                      staticClass: "layout justify-center",
+                                      attrs: { "primary-title": "" }
+                                    },
+                                    [
+                                      _c("div", { staticClass: "headline" }, [
+                                        _vm._v("Fast feedback")
+                                      ])
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("v-card-text", [
+                                    _vm._v(
+                                      "\n                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque vero quae\n                                    voluptates quisquam hic. Fugit eum similique eveniet architecto optio doloribus\n                                    accusantium esse vel ipsam doloremque et nesciunt, eius id.\n                                "
+                                    )
+                                  ])
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-flex",
+                            { attrs: { xs12: "", md4: "" } },
+                            [
+                              _c(
+                                "v-card",
+                                { staticClass: "elevation-0 transparent" },
+                                [
+                                  _c(
+                                    "v-card-text",
+                                    { staticClass: "text-xs-center" },
+                                    [
+                                      _c(
+                                        "v-icon",
+                                        {
+                                          staticClass:
+                                            "blue--text text--lighten-2",
+                                          attrs: { "x-large": "" }
+                                        },
+                                        [_vm._v("share")]
+                                      )
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-card-title",
+                                    {
+                                      staticClass: "layout justify-center",
+                                      attrs: { "primary-title": "" }
+                                    },
+                                    [
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass: "headline text-xs-center"
+                                        },
+                                        [_vm._v("Create new connections")]
+                                      )
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("v-card-text", [
+                                    _vm._v(
+                                      "\n                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Error delectus minus\n                                    deleniti, nam placeat temporibus, ducimus consequatur perspiciatis accusantium\n                                    reprehenderit voluptatem laboriosam saepe qui dolorum autem deserunt maiores,\n                                    facilis dicta.\n                                "
+                                    )
+                                  ])
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-flex",
+                            { attrs: { xs12: "", md4: "" } },
+                            [
+                              _c(
+                                "v-card",
+                                { staticClass: "elevation-0 transparent" },
+                                [
+                                  _c(
+                                    "v-card-text",
+                                    { staticClass: "text-xs-center" },
+                                    [
+                                      _c(
+                                        "v-icon",
+                                        {
+                                          staticClass:
+                                            "blue--text text--lighten-2",
+                                          attrs: { "x-large": "" }
+                                        },
+                                        [_vm._v("share")]
+                                      )
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-card-title",
+                                    {
+                                      staticClass: "layout justify-center",
+                                      attrs: { "primary-title": "" }
+                                    },
+                                    [
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass: "headline text-xs-center"
+                                        },
+                                        [_vm._v("Create new connections")]
+                                      )
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("v-card-text", [
+                                    _vm._v(
+                                      "\n                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Error delectus minus\n                                    deleniti, nam placeat temporibus, ducimus consequatur perspiciatis accusantium\n                                    reprehenderit voluptatem laboriosam saepe qui dolorum autem deserunt maiores,\n                                    facilis dicta.\n                                "
+                                    )
+                                  ])
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-flex",
+                            { attrs: { xs12: "", md4: "" } },
+                            [
+                              _c(
+                                "v-card",
+                                { staticClass: "elevation-0 transparent" },
+                                [
+                                  _c(
+                                    "v-card-text",
+                                    { staticClass: "text-xs-center" },
+                                    [
+                                      _c(
+                                        "v-icon",
+                                        {
+                                          staticClass:
+                                            "blue--text text--lighten-2",
+                                          attrs: { "x-large": "" }
+                                        },
+                                        [_vm._v("share")]
+                                      )
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-card-title",
+                                    {
+                                      staticClass: "layout justify-center",
+                                      attrs: { "primary-title": "" }
+                                    },
+                                    [
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass: "headline text-xs-center"
+                                        },
+                                        [_vm._v("Create new connections")]
+                                      )
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("v-card-text", [
+                                    _vm._v(
+                                      "\n                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Error delectus minus\n                                    deleniti, nam placeat temporibus, ducimus consequatur perspiciatis accusantium\n                                    reprehenderit voluptatem laboriosam saepe qui dolorum autem deserunt maiores,\n                                    facilis dicta.\n                                "
+                                    )
+                                  ])
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-flex",
+                            { attrs: { xs12: "", md4: "" } },
+                            [
+                              _c(
+                                "v-card",
+                                { staticClass: "elevation-0 transparent" },
+                                [
+                                  _c(
+                                    "v-card-text",
+                                    { staticClass: "text-xs-center" },
+                                    [
+                                      _c(
+                                        "v-icon",
+                                        {
+                                          staticClass:
+                                            "blue--text text--lighten-2",
+                                          attrs: { "x-large": "" }
+                                        },
+                                        [_vm._v("share")]
+                                      )
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-card-title",
+                                    {
+                                      staticClass: "layout justify-center",
+                                      attrs: { "primary-title": "" }
+                                    },
+                                    [
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass: "headline text-xs-center"
+                                        },
+                                        [_vm._v("Create new connections")]
+                                      )
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("v-card-text", [
+                                    _vm._v(
+                                      "\n                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Error delectus minus\n                                    deleniti, nam placeat temporibus, ducimus consequatur perspiciatis accusantium\n                                    reprehenderit voluptatem laboriosam saepe qui dolorum autem deserunt maiores,\n                                    facilis dicta.\n                                "
+                                    )
+                                  ])
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
                     ],
                     1
                   )
                 ],
                 1
               )
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "v-flex",
-            {
-              staticClass: "pa-4",
-              attrs: {
-                xs12: "",
-                sm12: "",
-                md6: "",
-                right: "",
-                "overflow-x-hidden": ""
-              }
-            },
-            [
-              _c(
-                "div",
-                { staticClass: "grey lighten-5 section--organize" },
-                [
-                  _c("v-container", { staticClass: "padding--organize" }, [
-                    _c(
-                      "h1",
-                      {
-                        staticClass:
-                          "font-weight-medium display-2 mb-4 greyd4--text"
-                      },
-                      [_vm._v("Stay organized instantly")]
-                    ),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "greyd4--text subheading" }, [
-                      _vm._v(
-                        "Get nudges that remind you to follow up and respond to messages, so that nothing slips through the cracks."
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("v-img", {
-                    attrs: {
-                      src:
-                        "https://lh3.googleusercontent.com/wlf842vsNrbW70WRloE0LzJVOJfoL4lYMbqOEebLudfLr91bLou7Sb6Hu7f5C_uP9femGOjfLdns4B9q5rdzVBHx9NIGvOayPqbvRQ=w0",
-                      "lazy-src":
-                        "https://lh3.googleusercontent.com/wlf842vsNrbW70WRloE0LzJVOJfoL4lYMbqOEebLudfLr91bLou7Sb6Hu7f5C_uP9femGOjfLdns4B9q5rdzVBHx9NIGvOayPqbvRQ=w0"
-                    },
-                    scopedSlots: _vm._u([
-                      {
-                        key: "placeholder",
-                        fn: function() {
-                          return [
-                            _c(
-                              "v-layout",
-                              {
-                                attrs: {
-                                  "fill-height": "",
-                                  "align-center": "",
-                                  "justify-center": "",
-                                  "ma-0": ""
-                                }
-                              },
-                              [
-                                _c("v-progress-circular", {
-                                  attrs: { indeterminate: "", color: "primary" }
-                                })
-                              ],
-                              1
-                            )
-                          ]
-                        },
-                        proxy: true
-                      }
-                    ])
-                  })
-                ],
-                1
-              )
-            ]
+            ],
+            1
           )
         ],
         1
