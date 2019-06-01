@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4e925efaf35a6acb7e982bb325bcf327",
+    "content-hash": "2d87aca1183de3f3c7858513bfd1a197",
     "packages": [
         {
             "name": "cakephp/chronos",
@@ -1061,6 +1061,54 @@
             ],
             "description": "Highlight PHP code in terminal",
             "time": "2018-09-29T18:48:56+00:00"
+        },
+        {
+            "name": "laravel-nova-fields/gender",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel-nova-fields/gender.git",
+                "reference": "56e1df125f7090e8bc914ffe5f84a26f30095198"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel-nova-fields/gender/zipball/56e1df125f7090e8bc914ffe5f84a26f30095198",
+                "reference": "56e1df125f7090e8bc914ffe5f84a26f30095198",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "LaravelNovaFields\\Gender\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "LaravelNovaFields\\Gender\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Travis Elkins",
+                    "email": "travis.elkins@gmail.com"
+                }
+            ],
+            "description": "A Laravel Nova gender field.",
+            "keywords": [
+                "gender",
+                "laravel",
+                "nova"
+            ],
+            "time": "2018-08-31T10:24:14+00:00"
         },
         {
             "name": "laravel/framework",

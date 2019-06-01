@@ -7,16 +7,18 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Place;
 use Laravel\Nova\Fields\Avatar;
+use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Country;
+use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\Gravatar;
 use Laravel\Nova\Fields\Password;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\MorphToMany;
+use LaravelNovaFields\Gender\Gender;
+use Laravel\Nova\Fields\BelongsToMany;
 use Orlyapps\NovaBelongsToDepend\NovaBelongsToDepend;
 use Manmohanjit\BelongsToDependency\BelongsToDependency;
-use Laravel\Nova\Fields\HasMany;
-use Laravel\Nova\Fields\BelongsToMany;
 
 class User extends Resource
 {
@@ -75,22 +77,27 @@ class User extends Resource
                 ->sortable()
                 ->rules('required', 'max:254'),
 
+            Select::make('Gender')->options([
+                '1' => 'Male',
+                '0' => 'Female',
+            ])->displayUsingLabels(),
+
             Boolean::make('Worker', 'job')
                 ->sortable()
                 ->rules('required', 'max:254'),
 
-            // BelongsTo::make('City', 'city', 'App\Nova\City'),
+            BelongsTo::make('City', 'city', 'App\Nova\City'),
 
-            // BelongsToDependency::make('Region')->dependsOn('city', 'city_id'),
+            BelongsToDependency::make('Region')->dependsOn('city', 'city_id'),
 
-            NovaBelongsToDepend::make('City')
-                ->options(\App\City::all())->rules('required'),
-            NovaBelongsToDepend::make('Region')
-                ->optionsResolve(function ($city) {
-                    // Reduce the amount of unnecessary data sent
-                    return $city->regions()->get(['id','region']);
-                })
-                ->dependsOn('City'),
+            // NovaBelongsToDepend::make('City')
+            //     ->options(\App\City::all())->rules('required'),
+            // NovaBelongsToDepend::make('Region')
+            //     ->optionsResolve(function ($city) {
+            //         // Reduce the amount of unnecessary data sent
+            //         return $city->regions()->get(['id','region']);
+            //     })
+            //     ->dependsOn('City'),
 
             Place::make('Address', 'address_line_1')->hideFromIndex()->countries(['EG']),
 
