@@ -15,7 +15,13 @@
             <app></app>
         </v-app>
     </div>
+    <script>
+        window.user = @json(
+        [
+            'user'=> auth()->user(),
+        ]
+        );
+    </script>
     <script src="{{ mix('js/app.js') }}"></script>
 </body>
-
 </html>

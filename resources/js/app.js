@@ -11,6 +11,17 @@ import Vue from 'vue'
 import router from './router'
 import Vuetify from 'vuetify'
 import colors from 'vuetify/es5/util/colors'
+import VeeValidate from 'vee-validate';
+import { store } from '@/store'
+import Gravatar from 'vue-gravatar';
+
+import Auth from './auth'
+
+Vue.prototype.$auth = new Auth(window.user);
+ 
+Vue.component('v-gravatar', Gravatar);
+
+Vue.use(VeeValidate);
 
 Vue.use(Vuetify, {
     theme: {
@@ -27,6 +38,28 @@ Vue.use(Vuetify, {
     }
   })
 
+
+  router.beforeEach((to, from, next) => {
+    if (to.matched.some(record => record.meta.requiresAuth)) {
+      if (!store.getters.loggedIn) {
+        next({
+          name: 'login',
+        })
+      } else {
+        next()
+      }
+    } else if (to.matched.some(record => record.meta.requiresVisitor)) {
+      if (store.getters.loggedIn) {
+        next({
+          name: 'todo',
+        })
+      } else {
+        next()
+      }
+    } else {
+      next()
+    }
+  })
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -51,5 +84,6 @@ router.beforeEach((to, from, next) => {
 })
 const app = new Vue({
     el: '#app',
+    store: store,
     router: router,
 });

@@ -12,6 +12,7 @@ class CreateWorkersTable extends Migration {
 			$table->bigInteger('user_id')->unsigned();
 			$table->integer('category_id')->unsigned();
 			$table->string('experience')->nullable();
+			$table->double('identifier')->nullable();
 			$table->text('biography')->nullable();
 			$table->float('price');
 			$table->string('files')->nullable();

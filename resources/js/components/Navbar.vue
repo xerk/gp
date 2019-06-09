@@ -1,18 +1,18 @@
 <template>
     <nav>
-        <v-navigation-drawer temporary absolute app v-model="drawer" fixed class="primary">
+        <v-navigation-drawer temporary absolute app v-model="drawer" fixed class="white">
             <v-list>
-                <v-list-tile v-for="link in menu" :key="link.text" router :to="link.route">
+                <v-list-tile v-for="link in drawerLinks" :key="link.text" router :to="link.route">
                     <v-list-tile-action>
-                        <v-icon class="white--text">{{link.icon}}</v-icon>
+                        <v-icon class="">{{link.icon}}</v-icon>
                     </v-list-tile-action>
                     <v-list-tile-content>
-                        <v-list-tile-title class="white--text">{{ link.title }}</v-list-tile-title>
+                        <v-list-tile-title class="">{{ link.title }}</v-list-tile-title>
                     </v-list-tile-content>
                 </v-list-tile>
             </v-list>
         </v-navigation-drawer>
-        <v-navigation-drawer temporary absolute right app v-model="drawer_2" fixed class="primary">
+        <!-- <v-navigation-drawer temporary absolute right app v-model="drawer_2" fixed class="primary">
             <v-list>
                 <v-list-tile v-for="item in menu" :key="item.text" router :to="item.route">
                     <v-list-tile-action>
@@ -23,11 +23,11 @@
                     </v-list-tile-content>
                 </v-list-tile>
             </v-list>
-        </v-navigation-drawer>
-        <v-toolbar app color="white" class="toolbar-shadow">
+        </v-navigation-drawer> -->
+        <v-toolbar app color="white" class="toolbar-shadow" scroll-off-screen>
             <v-toolbar-side-icon class=" hidden-md-and-up" @click="drawer = true"></v-toolbar-side-icon>
             <v-toolbar-title class="text-uppercase ">
-                <span class="primary--text">SOS</span>
+                <span class="primary--text">GMS</span>
             </v-toolbar-title>
             <v-spacer></v-spacer>
             <div v-for="item in menu" :key="item.title" class="hidden-sm-and-down">
@@ -37,7 +37,7 @@
             </div>
 
             <v-spacer></v-spacer>
-            <v-menu left bottom origin="center center" transition="scale-transition">
+            <!-- <v-menu left bottom origin="center center" transition="scale-transition">
                 <template v-slot:activator="{ on }">
                     <v-btn class="" v-on="on" flat>
                             <v-icon color="" left v-on="on">translate</v-icon>
@@ -56,31 +56,39 @@
                         </v-list-tile-content>
                     </v-list-tile>
                 </v-list>
-            </v-menu>
+            </v-menu> -->
             <div class="hidden-sm-and-down">
-                <v-tooltip bottom class="mr-1">
+                <v-tooltip v-if="!loggedIn" bottom class="mr-1">
                     <template v-slot:activator="{ on }">
-                        <v-btn class="" icon flat>
+                         <v-btn active-class="primary" icon flat to="/login">
                             <v-icon color="" dark v-on="on">power_settings_new</v-icon>
                         </v-btn>
                     </template>
                     <span>Login</span>
                 </v-tooltip>
-                <v-tooltip bottom class="mr-4">
+                <v-tooltip v-if="!loggedIn" bottom class="mr-4">
                     <template v-slot:activator="{ on }">
-                        <v-btn class="" icon flat>
+                        <v-btn active-class="primary" icon flat to="/registration">
                             <v-icon color="" dark v-on="on">person_add</v-icon>
                         </v-btn>
                     </template>
                     <span>Registration</span>
                 </v-tooltip>
-                <v-avatar class="pointer" size="32px">
-                    <v-icon dark>account_circle</v-icon>
+                <v-tooltip v-if="loggedIn" bottom class="mr-1">
+                    <template v-slot:activator="{ on }">
+                         <v-btn active-class="primary" icon flat to="/logout">
+                            <v-icon color="" dark v-on="on">power_settings_new</v-icon>
+                        </v-btn>
+                    </template>
+                    <span>Logout</span>
+                </v-tooltip>
+                <v-avatar v-if="loggedIn" class="pointer" size="32px">
+                    <v-gravatar :email="$auth.user.user.email" />
                 </v-avatar>
             </div>
-            <v-btn icon class="hidden-md-and-up" @click="drawer_2 = true">
+            <!-- <v-btn icon class="hidden-md-and-up" @click="drawer_2 = true">
                 <v-icon>more_vert</v-icon>
-            </v-btn>
+            </v-btn> -->
         </v-toolbar>
     </nav>
 </template>
@@ -128,7 +136,58 @@
                         icon: 'contact_support',
                         route: '/about'
                     },
-                ]
+                    {
+                        title: 'Team',
+                        icon: 'team',
+                        route: '/team'
+                    },
+                ],
+                drawerLinks: [{
+                        title: 'Home',
+                        icon: 'home',
+                        route: '/'
+                    },
+                    {
+                        title: 'Features',
+                        icon: 'featured_play_list',
+                        route: '/features'
+                    },
+                    {
+                        title: 'Categories',
+                        icon: 'dashboard',
+                        route: '/categories'
+                    },
+                    {
+                        title: 'Contact Us',
+                        icon: 'mail',
+                        route: '/contact'
+                    },
+                    {
+                        title: 'About',
+                        icon: 'contact_support',
+                        route: '/about'
+                    },
+                    {
+                        title: 'Login',
+                        icon: 'power_settings_new',
+                        route: '/about'
+                    },
+                    {
+                        title: 'Registeration',
+                        icon: 'person_add',
+                        route: '/about'
+                    },
+                    {
+                        title: 'Team',
+                        icon: 'team',
+                        route: '/team'
+                    },
+                ],
+            }
+        },
+        computed: {
+            loggedIn() {
+                return this.$store.getters.loggedIn
             }
         }
     }

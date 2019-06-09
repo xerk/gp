@@ -1,10 +1,14 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import Login from './pages/Login'
+import Registration from './pages/Registration'
+import Logout from './pages/Logout'
 import Home from './pages/Home'
 import Categories from './pages/Categories'
 import Features from './pages/Features'
 import Contact from './pages/Contact'
 import About from './pages/About'
+import Team from './pages/Team'
 import Error403 from './views/Error403'
 import Error404 from './views/Error404'
 
@@ -20,6 +24,29 @@ export default new Router({
             component: Home,
             meta: {
                 title: 'Home',
+            }
+        },
+        {
+            path: '/login',
+            name: 'login',
+            component: Login,
+            meta: {
+                title: 'Login',
+                requiresVisitor: true,
+            }
+        },
+        {
+            path: '/logout',
+            name: 'logout',
+            component: Logout
+        },
+        {
+            path: '/registration',
+            name: 'registration',
+            component: Registration,
+            meta: {
+                title: 'Registration',
+                requiresVisitor: true,
             }
         },
         {
@@ -52,6 +79,14 @@ export default new Router({
             component: About,
             meta: {
                 title: 'About',
+            }
+        },
+        {
+            path: '/team',
+            name: 'team',
+            component: Team,
+            meta: {
+                title: 'Team',
             }
         },
 

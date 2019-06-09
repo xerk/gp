@@ -13,10 +13,26 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-    Route::post('/logout', 'AuthController@logout');
+Route::group(['middleware' => 'auth:api'], function() {
+    Route::get('/user', 'Api\\UserController@index');
+    Route::get('/my-region', 'Api\\UserController@region');
+    Route::post('/order', 'Api\\OrderController@store');
+    Route::get('/show-orders', 'Api\\OrderController@show');
+    Route::post('/logout', 'Api\AuthController@logout');
+    Route::post('/update-order', 'Api\\OrderController@update');
+    Route::post('/edit-profile', 'Api\\UserController@update');
+    Route::post('/edit-worker', 'Api\\UserController@updateWorker');
+    Route::post('/review', 'Api\\CommentController@store');
+    Route::post('/check', 'Api\\UserController@checkPassword');
 });
 
-Route::post('/login', 'AuthController@login');
-Route::post('/register', 'AuthController@register');
+
+
+Route::get('/categories', 'Api\\CategoryController@index');
+Route::get('/cities', 'Api\\CityController@index');
+Route::get('/regions', 'Api\\RegionController@index');
+Route::get('/workers', 'Api\\WorkerController@index');
+
+Route::post('/login', 'Api\\AuthController@login');
+Route::post('/checkEmail', 'Api\\UserController@checkEmail');
+Route::post('/register', 'Api\\AuthController@register');

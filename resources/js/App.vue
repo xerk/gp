@@ -9,20 +9,67 @@
 </template>
 
 <script>
-import Navbar from "./components/Navbar"
-import Footer from "./components/Footer"
+    import Navbar from "./components/Navbar"
+    import Footer from "./components/Footer"
 
-export default {
-    name: 'App',
-    components: {
-        Navbar,
-        Footer,
+    export default {
+        name: 'App',
+        components: {
+            Navbar,
+            Footer,
+        }
     }
-}
+
 </script>
 
 <style>
-.pointer {
-    cursor: pointer;
-}
+    .pointer {
+        cursor: pointer;
+    }
+
+    .custom-loader {
+        animation: loader 1s infinite;
+        display: flex;
+    }
+
+    @-moz-keyframes loader {
+        from {
+            transform: rotate(0);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    @-webkit-keyframes loader {
+        from {
+            transform: rotate(0);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    @-o-keyframes loader {
+        from {
+            transform: rotate(0);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes loader {
+        from {
+            transform: rotate(0);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
 </style>
