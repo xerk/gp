@@ -1261,8 +1261,8 @@
             "name": "laravel/nova",
             "version": "dev-master",
             "dist": {
-                "type": "composer",
-                "url": "https://nova.laravel.com",
+                "type": "path",
+                "url": "./nova",
                 "reference": "145b8daa2cee422e828fc75d39bce148863ee326",
                 "shasum": null
             },

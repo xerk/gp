@@ -192,6 +192,9 @@
                 ]
             }
         },
+        mounted() {
+            this.$store.dispatch('retrieveUser')
+        },
         methods: {
             sortBy(prop) {
                 this.projects.sort((a, b) => a[prop] < b[prop] ? -1 : 1)

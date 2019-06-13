@@ -74,6 +74,9 @@
                 value: 4.5
             }
         },
+        mounted() {
+            this.$store.dispatch('retrieveUser')
+        },
         methods: {}
     }
 

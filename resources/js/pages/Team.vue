@@ -42,5 +42,8 @@ import organizingTeam from '@/components/team/organizingTeam'
         TeamDetails: TeamDetails,
       }
     },
+    mounted() {
+      this.$store.dispatch('retrieveUser')
+    }
   }
 </script>

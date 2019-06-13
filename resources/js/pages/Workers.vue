@@ -26,7 +26,7 @@
                             <template v-slot:items="props">
                                 <td>
                                     <v-avatar size="64" class="mr-3 my-2">
-                                        <v-img v-if="category" :src="'/storage/'+category.image" :lazy-src="'/'+category.image" alt="random image">
+                                        <v-img v-if="category" :src="'/storage/'+props.item.avatar" :lazy-src="'/'+props.item.avatar" alt="random image">
 
                                             <v-layout slot="placeholder" fill-height align-center justify-center ma-0>
                                                 <v-progress-circular indeterminate color="grey lighten-5">
@@ -157,7 +157,6 @@ import Request from '@/components/worker/Request'
                         console.log(error)
                     })
             },
-            
         }
     }
 

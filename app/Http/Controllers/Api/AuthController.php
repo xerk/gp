@@ -80,7 +80,7 @@ class AuthController extends Controller
                     'region_id' => $request->region_id,
                     'age' => $request->age,
                     'gender' => $request->gender,
-                    'avatar' => 'default.png'
+                    'avatar' => $request->gender == true ? 'default.png' : 'default-f.png'
                 ]);
                 
                 if ($request->job == 1) {
@@ -108,7 +108,7 @@ class AuthController extends Controller
                 'region_id' => $request->region_id,
                 'age' => $request->age,
                 'gender' => $request->gender,
-                'avatar' => 'default.png'
+                'avatar' => $request->gender == true ? 'default.png' : 'default-f.png'
             ]);
             return response()->json(['code' => '200', 'success_message' => 'Register successfully', 'user' => $user, 'status' => true], 200);
         }

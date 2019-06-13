@@ -84,6 +84,13 @@
                 </v-tooltip>
                 <v-avatar v-if="loggedIn" class="pointer" size="32px">
                     <!-- <v-gravatar :email="$auth.user.user.email" /> -->
+                    <v-img v-if="$store.state.user" :src="'/storage/'+$store.state.user.avatar" :lazy-src="'/storage/'+$store.state.user.avatar" alt="random image">
+
+                        <v-layout slot="placeholder" fill-height align-center justify-center ma-0>
+                            <v-progress-circular indeterminate color="grey lighten-5">
+                            </v-progress-circular>
+                        </v-layout>
+                    </v-img>
                 </v-avatar>
             </div>
             <!-- <v-btn icon class="hidden-md-and-up" @click="drawer_2 = true">

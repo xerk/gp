@@ -62,5 +62,8 @@ import ChapterDetails from '@/assets/data/chapterDetails.json'
         ChapterDetails: ChapterDetails
       }
     },
+    mounted() {
+      this.$store.dispatch('retrieveUser')
+    }
   }
 </script>

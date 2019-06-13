@@ -64,5 +64,8 @@ import AntiHarassmentPolicy from '@/components/about/AntiHarassmentPolicy'
         ChapterDetails: ChapterDetails
       }
     },
+    mounted() {
+      this.$store.dispatch('retrieveUser')
+    }
   }
 </script>

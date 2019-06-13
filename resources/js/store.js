@@ -13,6 +13,9 @@ export const store = new Vuex.Store({
         loggedIn(state) {
             return state.token !== null
         },
+        userStore(state) {
+            return state.user
+        },
     },
     mutations: {
         retrieveToken(state, token) {

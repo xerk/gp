@@ -48,6 +48,7 @@
         },
         mounted() {
             this.retrieveCategories()
+            this.$store.dispatch('retrieveUser')
         },
         methods: {
             retrieveCategories() {
