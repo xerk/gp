@@ -1,6 +1,6 @@
 <template>
     <nav>
-        <v-navigation-drawer temporary absolute app v-model="drawer" fixed class="white">
+        <v-navigation-drawer temporary app v-model="drawer" class="white">
             <v-list>
                 <v-list-tile v-for="link in drawerLinks" :key="link.text" router :to="link.route">
                     <v-list-tile-action>
