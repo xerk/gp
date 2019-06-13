@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 
 class WorkerController extends Controller
@@ -28,9 +29,24 @@ class WorkerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function workers(Request $request)
     {
-        //
+        if ($request->has('region_id')) {
+            $data = User::with('workers','workers.category', 'workerOrders', 'workerOrders.user', 'workerOrders.worker', 'receiveComments', 'receiveComments.user', 'receiveComments.userSend',  'sendComments', 'city', 'region')->whereHas('workers', function ($query) use ($request) {
+                $query->where('category_id', $request->category);
+            })->withCount(['receiveComments' => function ($q) {
+                $q->where('rating', '<>', null);
+            }])->where('job', 1)->where('region_id', $request->region_id)->get();
+        } else {
+            $data = User::with('workers','workers.category', 'workerOrders', 'workerOrders.user', 'workerOrders.worker', 'receiveComments', 'receiveComments.user', 'receiveComments.userSend',  'sendComments', 'city', 'region')->whereHas('workers', function ($query) use ($request) {
+                $query->where('category_id', $request->category);
+            })->withCount(['receiveComments as sum_rating' => function ($q) {
+                $q->where('rating', '<>', null)->select(DB::raw('sum(rating)'));
+            }])->withCount(['receiveComments as count_rating' => function ($q) {
+                $q->where('rating', '<>', null);
+            }])->where('job', 1)->get();
+        }
+        return response()->json(['code' => '200', 'data' => $data, 'status'=> true], 200);
     }
 
     /**

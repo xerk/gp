@@ -2,11 +2,11 @@
     <div class="features">
         <v-layout row wrap align-center class="text-xs-center pt-5 mt-3">
             <v-container>
-                <h1 class="font-weight-medium display-3 mb-4 greyd4--text">Features</h1>
+                <h1 class="font-weight-medium display-3 greyd4--text">Features</h1>
             </v-container>
         </v-layout>
         <section>
-            <v-layout column wrap class="my-5" align-center>
+            <v-layout column wrap class="" align-center>
                 <v-flex xs12 sm4 class="my-3">
                     <div class="text-xs-center">
                         <h2 class="headline">The best way to share your amazing stuff</h2>
@@ -24,92 +24,36 @@
                                         <v-icon x-large class="blue--text text--lighten-2">public</v-icon>
                                     </v-card-text>
                                     <v-card-title primary-title class="layout justify-center">
-                                        <div class="headline text-xs-center">Reach the world</div>
+                                        <div class="headline text-xs-center">Professional Worker</div>
                                     </v-card-title>
                                     <v-card-text>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse architecto
-                                        adipisci at. Beatae accusantium nulla quia provident voluptas libero tempore
-                                        sapiente atque dicta, voluptates repudiandae magni, voluptatum molestiae nostrum
-                                        id.
+                                        GMS doesn't accept any worker except the ones who passes GMS interviews, quality assurance and safety, Every worker on GMS has a file includes a copy of national ID and clean criminal record
                                     </v-card-text>
                                 </v-card>
                             </v-flex>
                             <v-flex xs12 md4>
                                 <v-card class="elevation-0 transparent">
                                     <v-card-text class="text-xs-center">
-                                        <v-icon x-large class="blue--text text--lighten-2">flash_on</v-icon>
+                                        <v-icon x-large class="blue--text text--lighten-2">attach_money</v-icon>
                                     </v-card-text>
                                     <v-card-title primary-title class="layout justify-center">
-                                        <div class="headline">Fast feedback</div>
+                                        <div class="headline">Pricing System</div>
                                     </v-card-title>
                                     <v-card-text>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque vero quae
-                                        voluptates quisquam hic. Fugit eum similique eveniet architecto optio doloribus
-                                        accusantium esse vel ipsam doloremque et nesciunt, eius id.
+                                        Worker had make it comfort instead of exhausting price negotiation after every process, As after the job done the system sends a message with the process price
                                     </v-card-text>
                                 </v-card>
                             </v-flex>
                             <v-flex xs12 md4>
                                 <v-card class="elevation-0 transparent">
                                     <v-card-text class="text-xs-center">
-                                        <v-icon x-large class="blue--text text--lighten-2">share</v-icon>
+                                        <v-icon x-large class="blue--text text--lighten-2">fas fa-star</v-icon>
                                     </v-card-text>
                                     <v-card-title primary-title class="layout justify-center">
-                                        <div class="headline text-xs-center">Create new connections</div>
+                                        <div class="headline text-xs-center">Worker Rating</div>
                                     </v-card-title>
                                     <v-card-text>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error delectus minus
-                                        deleniti, nam placeat temporibus, ducimus consequatur perspiciatis accusantium
-                                        reprehenderit voluptatem laboriosam saepe qui dolorum autem deserunt maiores,
-                                        facilis dicta.
-                                    </v-card-text>
-                                </v-card>
-                            </v-flex>
-                            <v-flex xs12 md4>
-                                <v-card class="elevation-0 transparent">
-                                    <v-card-text class="text-xs-center">
-                                        <v-icon x-large class="blue--text text--lighten-2">share</v-icon>
-                                    </v-card-text>
-                                    <v-card-title primary-title class="layout justify-center">
-                                        <div class="headline text-xs-center">Create new connections</div>
-                                    </v-card-title>
-                                    <v-card-text>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error delectus minus
-                                        deleniti, nam placeat temporibus, ducimus consequatur perspiciatis accusantium
-                                        reprehenderit voluptatem laboriosam saepe qui dolorum autem deserunt maiores,
-                                        facilis dicta.
-                                    </v-card-text>
-                                </v-card>
-                            </v-flex>
-                            <v-flex xs12 md4>
-                                <v-card class="elevation-0 transparent">
-                                    <v-card-text class="text-xs-center">
-                                        <v-icon x-large class="blue--text text--lighten-2">share</v-icon>
-                                    </v-card-text>
-                                    <v-card-title primary-title class="layout justify-center">
-                                        <div class="headline text-xs-center">Create new connections</div>
-                                    </v-card-title>
-                                    <v-card-text>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error delectus minus
-                                        deleniti, nam placeat temporibus, ducimus consequatur perspiciatis accusantium
-                                        reprehenderit voluptatem laboriosam saepe qui dolorum autem deserunt maiores,
-                                        facilis dicta.
-                                    </v-card-text>
-                                </v-card>
-                            </v-flex>
-                            <v-flex xs12 md4>
-                                <v-card class="elevation-0 transparent">
-                                    <v-card-text class="text-xs-center">
-                                        <v-icon x-large class="blue--text text--lighten-2">share</v-icon>
-                                    </v-card-text>
-                                    <v-card-title primary-title class="layout justify-center">
-                                        <div class="headline text-xs-center">Create new connections</div>
-                                    </v-card-title>
-                                    <v-card-text>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error delectus minus
-                                        deleniti, nam placeat temporibus, ducimus consequatur perspiciatis accusantium
-                                        reprehenderit voluptatem laboriosam saepe qui dolorum autem deserunt maiores,
-                                        facilis dicta.
+                                        The system gives you an opportunity to make a review on the Worker after your job done so that the Worker could enhance his services
                                     </v-card-text>
                                 </v-card>
                             </v-flex>

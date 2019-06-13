@@ -3,7 +3,7 @@
         <v-layout row wrap align-center class="grey lighten-5 pt-5">
             <v-flex xs12 sm12 md6>
                 <v-container class="mt-5">
-                    <h1 class="font-weight-medium display-3 mb-4 greyd4--text">Support our services</h1>
+                    <h1 class="font-weight-medium display-3 mb-4 greyd4--text">Give me service</h1>
                     <p class="greyd4--text subheading mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                         Veniam voluptatem dolor dolores, iusto, odio a eos minus saepe voluptates quia rem animi soluta
                         quod, hic sunt tenetur ratione excepturi reiciendis.</p>
@@ -11,7 +11,7 @@
                         <v-icon left>cloud_download</v-icon>
                         <span>Download</span>
                     </v-btn>
-                    <v-btn class="primary subheading" large flat>
+                    <v-btn class="primary subheading" router to="/login" large flat>
                         <v-icon left>power_settings_new</v-icon>
                         <span>Sign in</span>
                     </v-btn>
@@ -135,9 +135,9 @@
         <v-layout row wrap class="mx-5 section--padding-144">
             <v-flex xs12 sm12 md12 right overflow-x-hidden class="text-xs-center">
                 <v-img class="img-central"
-                    :src="`https://lh3.googleusercontent.com/77FaGP4LKMII9u0429XIC1nf7_IuHKhS-I_-9Ak_Q66P6G87k4JL7I1VCAyg4aIdX8NWpYupmdkcQAB1YpL4kb8qPEBM1CN0-iI5=w0`"
-                    :lazy-src="`https://lh3.googleusercontent.com/77FaGP4LKMII9u0429XIC1nf7_IuHKhS-I_-9Ak_Q66P6G87k4JL7I1VCAyg4aIdX8NWpYupmdkcQAB1YpL4kb8qPEBM1CN0-iI5=w0`"
-                    max-width="75">
+                    :src="`/images/logo.png`"
+                    :lazy-src="`/images/logo.png`"
+                    max-width="128">
                     <template v-slot:placeholder>
                         <v-layout fill-height align-center justify-center ma-0>
                             <v-progress-circular indeterminate color="primary"></v-progress-circular>
@@ -147,8 +147,8 @@
             </v-flex>
             <v-flex xs12 sm12 md12 text-xs-center>
                 <v-container>
-                    <h1 class="font-weight-medium display-2 mb-4 greyd4--text">Get started with Gmail</h1>
-                    <v-btn class="primary subheading py-2" large flat>
+                    <h1 class="font-weight-medium display-2 mb-4 greyd4--text">Get started with GMS</h1>
+                    <v-btn class="primary subheading py-2" router to="/registration" large flat>
                         <span class="text-none">Create an account</span>
                     </v-btn>
                 </v-container>

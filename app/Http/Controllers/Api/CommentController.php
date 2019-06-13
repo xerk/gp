@@ -37,7 +37,6 @@ class CommentController extends Controller
     public function store(Request $request)
     {
         if ($request->isMethod('post')) {
-            
             $request->validate([
                 'user_id' => 'required',
                 'body' => 'required',
@@ -54,6 +53,37 @@ class CommentController extends Controller
             ]);
 
             return response()->json(['code' => 200, 'success_message' => __('Profile updated successfully!'), 'status' => true]);
+            
+        }
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function storeWeb(Request $request)
+    {
+        // dd($request->all());
+        if ($request->isMethod('post')) {
+            
+            $request->validate([
+                'user_id' => 'required',
+                'body' => 'required',
+                'rating' => 'sometimes|nullable',
+
+            ]);
+            $user = $request->user();
+            
+            $comment = Comment::create([
+                'user_id' => $request->user_id,
+                'user_send_id' => $user->id,
+                'body' => $request->body,
+                'rating' => $request->rating,
+            ]);
+
+            return response()->json(['code' => 200, 'success_message' => __('Your comment has been added!'), 'data' => $comment, 'status' => true]);
             
         }
     }

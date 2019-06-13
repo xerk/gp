@@ -17,7 +17,12 @@ class Category extends Model
 
     public function users()
     {
-        return $this->belongsToMany('App\User');
+        return $this->belongsToMany('App\User')->where('job', 1);
+    }
+
+    public function workers()
+    {
+        return $this->hasMany('App\Worker');
     }
 
 }

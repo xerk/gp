@@ -15,7 +15,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $data = Category::all();
+        $data = Category::withCount('workers as count_workers')->get();
         return response()->json(['code' => '200', 'data' => $data, 'status'=> true], 200);
     }
 
@@ -48,7 +48,8 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = Category::where('id', $id)->first();
+        return response()->json(['code' => '200', 'data' => $data, 'status'=> true], 200);
     }
 
     /**

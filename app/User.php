@@ -23,7 +23,7 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'phone', 'job', 'city_id', 'region_id', 'address_line_1', 'address_line_2', 'age'
+        'name', 'email', 'password', 'phone', 'job', 'city_id', 'region_id', 'address_line_1', 'address_line_2', 'age', 'avatar'
     ];
 
     /**
@@ -49,12 +49,27 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function workers()
     {
-        return $this->hasMany('App\Worker', 'user_id');
+        return $this->hasOne('App\Worker', 'user_id');
     }
 
     public function workerOrders()
     {
+        return $this->hasMany('App\Order', 'worker_id');
+    }
+
+    public function clientOrders()
+    {
         return $this->hasMany('App\Order', 'user_id');
+    }
+    
+    public function receiveComments()
+    {
+        return $this->hasMany('App\Comment', 'user_id');
+    }
+
+    public function sendComments()
+    {
+        return $this->hasMany('App\Comment', 'user_send_id');
     }
 
     public function city()

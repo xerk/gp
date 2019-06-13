@@ -8,20 +8,20 @@
                     quod, hic sunt tenetur ratione excepturi reiciendis.</p>
             </v-container>
         </v-layout>
-        <v-layout row wrap align-center class="text-xs-center grey lighten-5 px-5">
-             <v-flex xs6 sm4 md3 lg2 class="mb-3 ma-3">
-                <v-container>
+                <v-container class="pa-0">
+        <v-layout wrap align-center justify-center row fill-height class="text-xs-center grey lighten-5 mt-0 mb-0">
+             <v-flex xs6 sm3 md2 lg2 class="mb-3 ma-3 text-xs-center" v-for="category in categories.data" :key="category.id">
                     <v-hover>
-                        <v-card slot-scope="{ hover }" width="300" style="border-radius: 30px;">
-                            <v-img :aspect-ratio="20/20" width="300" src="https://cdn.vuetifyjs.com/images/john.jpg">
+                        <v-card slot-scope="{ hover }" width="300" style="border-radius: 50%;">
+                            <v-img :aspect-ratio="20/20" width="300" :src="'/storage/' + category.image" :lazy-src="'/storage/' + category.image">
                                 <v-expand-transition>
                                     <div v-if="hover"
                                         class="transition-fast-in-fast-out text-xs-center orange darken-2 v-card--reveal display-1 white--text"
                                         style="height: 100%;">
                                         <div class="pt-5">
-                                            <span>Electrician</span>
+                                            <span>{{ category.name }}</span>
                                         </div>
-                                        <v-btn class="white mt-5" large>
+                                        <v-btn class="white mt-5" large router :to="{ name: 'workers', params: { id: category.id }}">
                                             <span>Show Workers</span>
                                         </v-btn>
                                     </div>
@@ -29,9 +29,10 @@
                             </v-img>
                         </v-card>
                     </v-hover>
-                </v-container>
+                    <v-btn flat class="button-request primary" router :to="{ name: 'workers', params: { id: category.id }}">{{ category.name }} ({{category.count_workers}})</v-btn>
             </v-flex>
         </v-layout>
+        </v-container>
     </div>
 </template>
 <script>
@@ -41,10 +42,24 @@
             return {
                 avatarSize: 200,
                 reviews: 413,
-                value: 4.5
+                value: 4.5,
+                categories: [],
             }
         },
-        methods: {}
+        mounted() {
+            this.retrieveCategories()
+        },
+        methods: {
+            retrieveCategories() {
+                    axios.get('/categories')
+                        .then(response => {
+                            this.categories = response.data
+                        })
+                        .catch(error => {
+                            console.log(error)
+                        })
+            },
+        }
     }
 
 </script>

@@ -7,6 +7,7 @@ Vue.use(Vuex)
 export const store = new Vuex.Store({
     state: {
         token: localStorage.getItem('access_token') || null,
+        user: {},
     },
     getters: {
         loggedIn(state) {
@@ -23,15 +24,17 @@ export const store = new Vuex.Store({
         clearTodos(state) {
             state.todos = []
         },
+        retrieveUser(state, user) {
+        state.user = user
+        },
     },
     actions: {
         register(context, data) {
+            const params = {
+                ...data
+            }
             return new Promise((resolve, reject) => {
-                axios.post('/register', {
-                        name: data.name,
-                        email: data.email,
-                        password: data.password,
-                    })
+                axios.post('/register', params)
                     .then(response => {
                         resolve(response)
                     })
@@ -82,6 +85,22 @@ export const store = new Vuex.Store({
                         reject(error)
                     })
             })
+        },
+        retrieveUser(context) {
+            axios.defaults.headers.common['Authorization'] = 'Bearer ' + context.state.token
+            if (context.getters.loggedIn) {
+                return new Promise((resolve, reject) => {
+                axios.get('/user')
+                    .then(response => {
+                        context.commit('retrieveUser', response.data.data)
+                        resolve(response)
+                    })
+                    .catch(error => {
+                        console.log(error)
+                        reject(error)
+                    })
+                })
+            }
         },
     }
 })

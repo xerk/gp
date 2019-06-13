@@ -27,7 +27,7 @@
         <v-toolbar app color="white" class="toolbar-shadow" scroll-off-screen>
             <v-toolbar-side-icon class=" hidden-md-and-up" @click="drawer = true"></v-toolbar-side-icon>
             <v-toolbar-title class="text-uppercase ">
-                <span class="primary--text">GMS</span>
+                <img src="/images/logo.png" width="80px">
             </v-toolbar-title>
             <v-spacer></v-spacer>
             <div v-for="item in menu" :key="item.title" class="hidden-sm-and-down">
@@ -83,7 +83,7 @@
                     <span>Logout</span>
                 </v-tooltip>
                 <v-avatar v-if="loggedIn" class="pointer" size="32px">
-                    <v-gravatar :email="$auth.user.user.email" />
+                    <!-- <v-gravatar :email="$auth.user.user.email" /> -->
                 </v-avatar>
             </div>
             <!-- <v-btn icon class="hidden-md-and-up" @click="drawer_2 = true">

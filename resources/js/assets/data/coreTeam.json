@@ -1,43 +1,43 @@
 [
     {
-        "name":"Name",
+        "name":"Ahmed Mamdouh",
+        "designation":"Team Leader & Frontend & Backend Developer",
+        "twitter":"https://twitter.com/theXerK",
+        "linkedin":"https://www.linkedin.com/in/xerk",
+        "github":"https://github.com/xerk",
+        "profileImage":"mamdouh.jpg",
+        "website":""
+    },
+    {
+        "name":"Ahmed Isamel",
         "designation":"Front End Developer",
         "twitter":"https://twitter.com/vrijrajsingh",
         "linkedin":"https://www.linkedin.com/in/vrijraj",
         "github":"https://github.com/Vrijraj",
-        "profileImage":"",
+        "profileImage":"ismail.jpeg",
         "website":""
     },
     {
-        "name":"Name",
-        "designation":"Front End Developer",
+        "name":"Mahmoud Ashraf",
+        "designation":"Video",
         "twitter":"https://twitter.com/vrijrajsingh",
         "linkedin":"https://www.linkedin.com/in/vrijraj",
         "github":"https://github.com/Vrijraj",
-        "profileImage":"",
+        "profileImage":"mahmoud.jpeg",
         "website":""
     },
     {
-        "name":"Name",
-        "designation":"Front End Developer",
-        "twitter":"https://twitter.com/vrijrajsingh",
-        "linkedin":"https://www.linkedin.com/in/vrijraj",
-        "github":"https://github.com/Vrijraj",
-        "profileImage":"",
-        "website":""
-    },
-    {
-        "name":"Name",
-        "designation":"Front End Developer",
+        "name":"Marwan Khaled",
+        "designation":"UI / UX",
         "twitter":"",
         "linkedin":"https://www.linkedin.com/in/vrijraj",
         "github":"https://github.com/Vrijraj",
-        "profileImage":"",
+        "profileImage":"marwan.jpeg",
         "website":""
     },
     {
-        "name":"Name",
-        "designation":"Front End Developer",
+        "name":"Shrief Nasser",
+        "designation":"UI / UX",
         "twitter":"https://twitter.com/vrijrajsingh",
         "linkedin":"https://www.linkedin.com/in/vrijraj",
         "github":"https://github.com/Vrijraj",
@@ -45,8 +45,8 @@
         "website":""
     },
     {
-        "name":"Name",
-        "designation":"Front End Developer",
+        "name":"Adely Adel",
+        "designation":"Android Developer",
         "twitter":"https://twitter.com/vrijrajsingh",
         "linkedin":"https://www.linkedin.com/in/vrijraj",
         "github":"https://github.com/Vrijraj",
@@ -54,30 +54,30 @@
         "website":""
     },
     {
-        "name":"Name",
-        "designation":"Front End Developer",
+        "name":"Mohamed Ezzat",
+        "designation":"Android Developer",
         "twitter":"https://twitter.com/vrijrajsingh",
         "linkedin":"https://www.linkedin.com/in/vrijraj",
         "github":"https://github.com/Vrijraj",
-        "profileImage":"",
+        "profileImage":"ezzat.jpeg",
         "website":""
     },
     {
-        "name":"Name",
-        "designation":"Front End Developer",
+        "name":"Suzan Adel",
+        "designation":"Android Developer",
         "twitter":"https://twitter.com/vrijrajsingh",
         "linkedin":"https://www.linkedin.com/in/vrijraj",
         "github":"https://github.com/Vrijraj",
-        "profileImage":"",
+        "profileImage":"suzan.jpeg",
         "website":""
     },
     {
-        "name":"Name",
-        "designation":"Front End Developer",
+        "name":"Mohamed El Hawary",
+        "designation":"Database & Hardware",
         "twitter":"https://twitter.com/vrijrajsingh",
         "linkedin":"https://www.linkedin.com/in/vrijraj",
         "github":"https://github.com/Vrijraj",
-        "profileImage":"",
+        "profileImage":"elhwary.jpeg",
         "website":""
     }
 ]

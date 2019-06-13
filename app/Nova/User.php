@@ -111,6 +111,8 @@ class User extends Resource
 
             BelongsToMany::make('Categories'),
 
+            Avatar::make('Avatar')->hideFromIndex(),
+
         ];
     }
 

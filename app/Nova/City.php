@@ -31,7 +31,7 @@ class City extends ResourceForUser
      * @var array
      */
     public static $search = [
-        'id',
+        'id', 'city',
     ];
 
     /**

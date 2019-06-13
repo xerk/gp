@@ -44,6 +44,7 @@ class AuthController extends Controller
             $validate = $request->validate([
                 'name' => 'required|string|max:255',
                 'phone' => 'required|string|max:16|unique:users',
+                'email' => 'string|email|max:255|unique:users',
                 'job' => 'required',
                 'password' => 'required|string|min:6',
                 'age' => 'required',
@@ -71,14 +72,15 @@ class AuthController extends Controller
 
                 $user = User::create([
                     'name' => $request->name,
-                    // 'email' => $request->email,
+                    'email' => $request->email,
                     'password' => Hash::make($request->password),
                     'job' => $request->job,
                     'phone' => $request->phone,
                     'city_id' => $request->city_id,
                     'region_id' => $request->region_id,
                     'age' => $request->age,
-                    'gender' => $request->gender
+                    'gender' => $request->gender,
+                    'avatar' => 'default.png'
                 ]);
                 
                 if ($request->job == 1) {
@@ -100,11 +102,13 @@ class AuthController extends Controller
                 'name' => $request->name,
                 'password' => Hash::make($request->password),
                 'job' => $request->job,
+                'email' => $request->email,
                 'phone' => $request->phone,
                 'city_id' => $request->city_id,
                 'region_id' => $request->region_id,
                 'age' => $request->age,
-                'gender' => $request->gender
+                'gender' => $request->gender,
+                'avatar' => 'default.png'
             ]);
             return response()->json(['code' => '200', 'success_message' => 'Register successfully', 'user' => $user, 'status' => true], 200);
         }

@@ -7,6 +7,10 @@
 
 require('./bootstrap');
 
+import '@fortawesome/fontawesome-free/css/all.css'
+import '@mdi/font/css/materialdesignicons.css' // Ensure you are using css-loader
+import 'material-design-icons-iconfont/dist/material-design-icons.css' // Ensure you are using css-loader
+import 'font-awesome/css/font-awesome.min.css' // Ensure you are using css-loader
 import Vue from 'vue'
 import router from './router'
 import Vuetify from 'vuetify'
@@ -17,7 +21,7 @@ import Gravatar from 'vue-gravatar';
 
 import Auth from './auth'
 
-Vue.prototype.$auth = new Auth(window.user);
+// Vue.prototype.$auth = user;
  
 Vue.component('v-gravatar', Gravatar);
 
@@ -35,7 +39,8 @@ Vue.use(Vuetify, {
       greyd2: colors.grey.darken2,
       greyd3: colors.grey.darken3,
       greyd4: colors.grey.darken4,
-    }
+    },
+    iconfont: ['mdi', 'md', 'mdi', 'fa', 'fa4']
   })
 
 
@@ -86,4 +91,12 @@ const app = new Vue({
     el: '#app',
     store: store,
     router: router,
+    mounted() {
+      this.user()
+    },
+    methods: {
+      user() {
+          this.$store.dispatch('retrieveUser')
+      },
+    }
 });

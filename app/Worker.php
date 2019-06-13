@@ -29,4 +29,9 @@ class Worker extends Model
         return $this->belongsTo('App\User', 'user_id')->where('job', 1);
     }
 
+    public function category()
+    {
+        return $this->belongsTo('App\Category', 'category_id');
+    }
+
 }

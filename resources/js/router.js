@@ -5,6 +5,7 @@ import Registration from './pages/Registration'
 import Logout from './pages/Logout'
 import Home from './pages/Home'
 import Categories from './pages/Categories'
+import Workers from './pages/Workers'
 import Features from './pages/Features'
 import Contact from './pages/Contact'
 import About from './pages/About'
@@ -33,7 +34,8 @@ export default new Router({
             meta: {
                 title: 'Login',
                 requiresVisitor: true,
-            }
+            },
+            props: true,
         },
         {
             path: '/logout',
@@ -47,7 +49,8 @@ export default new Router({
             meta: {
                 title: 'Registration',
                 requiresVisitor: true,
-            }
+            },
+            props: true,
         },
         {
             path: '/categories',
@@ -55,7 +58,17 @@ export default new Router({
             component: Categories,
             meta: {
                 title: 'Categories',
-            }
+            },
+            props: true,
+        },
+        {
+            path: '/categories/workers/:id',
+            name: 'workers',
+            component: Workers,
+            meta: {
+                title: 'Workers',
+            },
+            props: true,
         },
         {
             path: '/features',

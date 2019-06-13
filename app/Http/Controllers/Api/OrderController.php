@@ -54,6 +54,30 @@ class OrderController extends Controller
     }
 
     /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function storeOrder(Request $request)
+    {
+        $validate = $request->validate([
+            'worker_id' => 'required',
+        ]);
+        $user = $request->user();
+
+        $order = Order::create([
+            'user_id' => $user->id,
+            'worker_id' => $request->worker_id,
+            'title' => $request->title,
+            'body' => $request->body,
+            'is_done' => 0,
+        ]);
+
+        return response()->json(['code' => 200, 'order' => $order, 'status' => true]);
+    }
+
+    /**
      * Display the specified resource.
      *
      * @param  int  $id
