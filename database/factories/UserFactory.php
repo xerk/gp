@@ -20,10 +20,8 @@ $factory->define(User::class, function (Faker $faker) {
         0,
         1,
     );
-    $avatar = array(
-        'default.png',
-        'default-f.png',
-    );
+    $avatar = ['default.png', 'default-f.png'];
+    $age = array(20,21,23,24,25,26,30,25,47,50,16,15,18,19);
     return [
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
@@ -33,7 +31,7 @@ $factory->define(User::class, function (Faker $faker) {
         'job' => 0,
         'gender' => array_rand($strings),
         'phone' => $faker->e164PhoneNumber,
-        'avatar' => array_rand($avatar),
-        'age' => array_rand([20,21,23,24,25,26,30,25,47,50,16,15,18,19])
+        'avatar' => Arr::random($avatar),
+        'age' =>  Arr::random($age)
     ];
 });
