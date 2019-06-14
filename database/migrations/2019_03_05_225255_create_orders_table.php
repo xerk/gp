@@ -14,7 +14,7 @@ class CreateOrdersTable extends Migration {
 			$table->string('title', 100);
 			$table->text('body');
 			$table->tinyInteger('is_done');
-			$table->tinyInteger('status');
+			$table->tinyInteger('status')->nullable();
 			$table->timestamps();
 			$table->softDeletes();
 		});
