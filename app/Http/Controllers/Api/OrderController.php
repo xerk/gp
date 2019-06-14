@@ -123,6 +123,23 @@ class OrderController extends Controller
     }
 
     /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function accept(Request $request)
+    {
+        $order = Order::where('id', $request->order_id)->first();
+        $order->status = $request->status;
+
+        $order->save();
+
+        return response()->json(['code' => 200, 'data' => $order, 'message' => 'Order has been accepted', 'status' => true]);
+    }
+
+    /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id

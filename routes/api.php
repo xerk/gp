@@ -15,12 +15,14 @@ use Illuminate\Http\Request;
 
 Route::group(['middleware' => 'auth:api'], function() {
     Route::get('/user', 'Api\\UserController@index');
+    Route::get('/user-web', 'Api\\UserController@show');
     Route::get('/my-region', 'Api\\UserController@region');
     Route::post('/order', 'Api\\OrderController@store');
     Route::post('/order-web', 'Api\\OrderController@storeOrder');
     Route::get('/show-orders', 'Api\\OrderController@show');
     Route::post('/logout', 'Api\AuthController@logout');
     Route::post('/update-order', 'Api\\OrderController@update');
+    Route::post('/accept-order', 'Api\\OrderController@accept');
     Route::post('/edit-profile', 'Api\\UserController@update');
     Route::post('/edit-worker', 'Api\\UserController@updateWorker');
     Route::post('/review', 'Api\\CommentController@store');

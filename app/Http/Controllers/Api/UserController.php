@@ -6,6 +6,7 @@ use App\User;
 use App\Region;
 use App\Worker;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 
@@ -56,9 +57,19 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request)
     {
-        //
+        $user = $request->user();
+        if ($user->job == 1) {
+            $data = User::with('workers','workers.category', 'workerOrders', 'workerOrders.user', 'workerOrders.worker', 'receiveComments', 'receiveComments.user', 'receiveComments.userSend',  'sendComments', 'city', 'region')->withCount(['receiveComments as sum_rating' => function ($q) {
+                $q->where('rating', '<>', null)->select(DB::raw('sum(rating)'));
+            }])->withCount(['receiveComments as count_rating' => function ($q) {
+                $q->where('rating', '<>', null);
+            }])->where('id', $user->id)->first();
+        } else {
+            $data = User::with('clientOrders', 'clientOrders.user', 'clientOrders.worker', 'receiveComments', 'receiveComments.user', 'receiveComments.userSend',  'sendComments', 'sendComments.user', 'sendComments.userSend',)->where('id', $user->id)->where('job', 0)->first();
+        }
+        return response()->json(['code' => '200', 'data' => $data, 'status'=> true], 200);
     }
 
     /**

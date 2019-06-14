@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Login from './pages/Login'
+import Profile from './pages/Profile'
 import Registration from './pages/Registration'
 import Logout from './pages/Logout'
 import Home from './pages/Home'
@@ -34,6 +35,16 @@ export default new Router({
             meta: {
                 title: 'Login',
                 requiresVisitor: true,
+            },
+            props: true,
+        },
+        {
+            path: '/profile',
+            name: 'profile',
+            component: Profile,
+            meta: {
+                title: 'Profile',
+                requiresAuth: true,
             },
             props: true,
         },
