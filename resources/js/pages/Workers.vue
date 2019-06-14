@@ -103,6 +103,11 @@ import Request from '@/components/worker/Request'
                         value: 'rating'
                     },
                     {
+                        text: 'Available',
+                        align: 'center',
+                        value: 'available'
+                    },
+                    {
                         text: 'Action',
                         align: 'center',
                         value: 'action'

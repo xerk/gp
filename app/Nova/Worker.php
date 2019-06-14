@@ -36,6 +36,7 @@ class Worker extends ResourceForUser
     public static $search = [
         'id',
     ];
+    public static $globallySearchable = false;
 
     /**
      * Get the fields displayed by the resource.

@@ -140,7 +140,7 @@
                                                 </v-btn>
                                             </v-list-tile-action>
                                         </v-list-tile>
-                                        <v-list-tile v-if="order.status != 2 && order.status != 1 && user.job == 1">
+                                        <v-list-tile v-if="order.status != 2 && order.status != 1">
                                             <v-list-tile-action class="text-xs-right">
                                                 <v-btn class="button-shadow red white--text"
                                                     @click="acceptRequest(order.id, 2)" :disabled="loadingDialog"
