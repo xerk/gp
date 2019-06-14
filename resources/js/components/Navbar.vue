@@ -60,7 +60,7 @@
             <div class="hidden-sm-and-down">
                 <v-tooltip v-if="!loggedIn" bottom class="mr-1">
                     <template v-slot:activator="{ on }">
-                         <v-btn active-class="primary" icon flat to="/login">
+                        <v-btn active-class="primary" icon flat to="/login">
                             <v-icon color="" dark v-on="on">power_settings_new</v-icon>
                         </v-btn>
                     </template>
@@ -76,22 +76,86 @@
                 </v-tooltip>
                 <v-tooltip v-if="loggedIn" bottom class="mr-1">
                     <template v-slot:activator="{ on }">
-                         <v-btn active-class="primary" icon flat to="/logout">
+                        <v-btn active-class="primary" icon flat to="/logout">
                             <v-icon color="" dark v-on="on">power_settings_new</v-icon>
                         </v-btn>
                     </template>
                     <span>Logout</span>
                 </v-tooltip>
-                <v-avatar v-if="loggedIn" class="pointer" size="32px">
-                    <!-- <v-gravatar :email="$auth.user.user.email" /> -->
-                    <v-img v-if="$store.state.user" :src="'/storage/'+$store.state.user.avatar" :lazy-src="'/storage/'+$store.state.user.avatar" alt="random image">
+                <v-menu v-if="loggedIn" v-model="menu2" :close-on-content-click="false" :nudge-width="200" offset-x>
+                    <template v-slot:activator="{ on }">
+                        <v-avatar  class="pointer" size="32px" v-on="on">
+                            <!-- <v-gravatar :email="$auth.user.user.email" /> -->
+                            <v-img v-if="$store.state.user" :src="'/storage/'+$store.state.user.avatar"
+                                :lazy-src="'/storage/'+$store.state.user.avatar" alt="random image">
 
-                        <v-layout slot="placeholder" fill-height align-center justify-center ma-0>
-                            <v-progress-circular indeterminate color="grey lighten-5">
-                            </v-progress-circular>
-                        </v-layout>
-                    </v-img>
-                </v-avatar>
+                                <v-layout slot="placeholder" fill-height align-center justify-center ma-0>
+                                    <v-progress-circular indeterminate color="grey lighten-5">
+                                    </v-progress-circular>
+                                </v-layout>
+                            </v-img>
+                        </v-avatar>
+                    </template>
+
+                    <v-card>
+                        <v-list>
+                            <v-list-tile avatar>
+                                <v-list-tile-avatar>
+                                    <v-img v-if="$store.state.user" :src="'/storage/'+$store.state.user.avatar"
+                                        :lazy-src="'/storage/'+$store.state.user.avatar" alt="random image">
+
+                                        <v-layout slot="placeholder" fill-height align-center justify-center ma-0>
+                                            <v-progress-circular indeterminate color="grey lighten-5">
+                                            </v-progress-circular>
+                                        </v-layout>
+                                    </v-img>
+                                </v-list-tile-avatar>
+
+                                <v-list-tile-content>
+                                    <v-list-tile-title>{{$store.state.user.name}}</v-list-tile-title>
+                                    <v-list-tile-sub-title>{{$store.state.user.email}}</v-list-tile-sub-title>
+                                </v-list-tile-content>
+
+                                <v-list-tile-action>
+                                    <v-btn :class="fav ? 'red--text' : ''" icon @click="fav = !fav">
+                                        <v-icon>favorite</v-icon>
+                                    </v-btn>
+                                </v-list-tile-action>
+                            </v-list-tile>
+                        </v-list>
+
+                        <v-divider></v-divider>
+
+                        <v-list>
+                            <v-list-tile>
+                                <v-list-tile-action>
+                                    <v-icon>person</v-icon>
+                                </v-list-tile-action>
+                                <v-list-tile-sub-title><router-link style="text-decoration: none;" to="/profile">
+                                        <v-btn flat href.prevent="" class="primary--text">Profile</v-btn>
+                                    </router-link></v-list-tile-sub-title>
+                            </v-list-tile>
+
+                            <v-list-tile>
+                                <v-list-tile-action>
+                                    <v-icon>power_off</v-icon>
+                                </v-list-tile-action>
+                                <v-list-tile-sub-title>
+                                    <router-link to="/logout" style="text-decoration: none;">
+                                        <v-btn flat href.prevent="" class="primary--text" style="text-decoration: none;">Logout</v-btn>
+                                    </router-link>
+                                </v-list-tile-sub-title>
+                            </v-list-tile>
+                        </v-list>
+
+                        <v-card-actions>
+                            <v-spacer></v-spacer>
+
+                            <v-btn flat @click="menu2 = false">Cancel</v-btn>
+                            <v-btn color="primary" flat @click="menu2 = false">Save</v-btn>
+                        </v-card-actions>
+                    </v-card>
+                </v-menu>
             </div>
             <!-- <v-btn icon class="hidden-md-and-up" @click="drawer_2 = true">
                 <v-icon>more_vert</v-icon>
@@ -106,8 +170,7 @@
             return {
                 drawer: false,
                 drawer_2: false,
-                locales: [
-                    {
+                locales: [{
                         title: 'Enlish',
                         code: 'EN',
                         icon: 'us'
@@ -118,6 +181,10 @@
                         icon: 'eg'
                     }
                 ],
+                fav: true,
+                menu2: false,
+                message: false,
+                hints: true,
                 menu: [{
                         title: 'Home',
                         icon: 'home',
@@ -201,7 +268,8 @@
 
 </script>
 <style scoped>
-.toolbar-shadow {
-    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1), inset 0 -1px 0 0 #dfdfdf2b;
-}
+    .toolbar-shadow {
+        box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1), inset 0 -1px 0 0 #dfdfdf2b;
+    }
+
 </style>
