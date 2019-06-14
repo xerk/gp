@@ -76,7 +76,7 @@
                             </v-list-tile>
                             <v-list-tile avatar>
                                 <v-list-tile-content>
-                                    <v-list-tile-sub-title>City: <span class="black--text"
+                                    <v-list-tile-sub-title v-if="item.city && item.region">City: <span class="black--text"
                                             style="vertical-align: inherit;">{{item.city.city}}</span> / Region: <span
                                             class="black--text"
                                             style="vertical-align: inherit;">{{item.region.region}}</span>
