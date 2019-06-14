@@ -219,43 +219,64 @@
                 drawerLinks: [{
                         title: 'Home',
                         icon: 'home',
-                        route: '/'
+                        route: '/',
+                        auth: null
                     },
                     {
                         title: 'Features',
                         icon: 'featured_play_list',
-                        route: '/features'
+                        route: '/features',
+                        auth: null
                     },
                     {
                         title: 'Categories',
                         icon: 'dashboard',
-                        route: '/categories'
+                        route: '/categories',
+                        auth: null
                     },
                     {
                         title: 'Contact Us',
                         icon: 'mail',
-                        route: '/contact'
+                        route: '/contact',
+                        auth: null
                     },
                     {
                         title: 'About',
                         icon: 'contact_support',
-                        route: '/about'
+                        route: '/about',
+                        auth: null
+                        
                     },
                     {
                         title: 'Login',
                         icon: 'power_settings_new',
-                        route: '/about'
+                        route: '/login',
+                        auth: false,
                     },
                     {
-                        title: 'Registeration',
+                        title: 'Registration',
                         icon: 'person_add',
-                        route: '/about'
+                        route: '/registration',
+                        auth: false,
                     },
                     {
                         title: 'Team',
                         icon: 'team',
                         route: '/team'
                     },
+                    {
+                        title: 'Profile',
+                        icon: 'person_add',
+                        route: '/profile',
+                        auth: true,
+                    },
+                    {
+                        title: 'Logout',
+                        icon: 'person_add',
+                        route: '/logout',
+                        auth: true,
+                    },
+                    
                 ],
             }
         },

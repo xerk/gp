@@ -65,8 +65,8 @@
                                     </v-list-tile-content>
                                 </v-list-tile>
                             </v-list>
-                            <v-divider></v-divider>
-                            <v-list three-line subheader>
+                            <v-divider v-if="orders != ''" ></v-divider>
+                            <v-list v-if="orders != ''" three-line subheader>
                                 <v-subheader>Orders</v-subheader>
                                 <v-slide-x-transition group>
                                     <v-list-tile avatar v-for="(order, index) in orders" :key="index" ripple>
@@ -171,7 +171,7 @@
                                 </v-card>
                             </v-dialog>
                             <v-divider></v-divider>
-                            <v-subheader v-if="user.receive_comments">Reviews</v-subheader>
+                            <v-subheader>Reviews</v-subheader>
                             <v-container style="max-width: 600px;">
                                 <v-timeline dense clipped>
                                     <v-timeline-item v-if="!loggedIn" fill-dot class="mb-5" color="orange" small>
