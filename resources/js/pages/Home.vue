@@ -19,8 +19,8 @@
             </v-flex>
             <v-flex xs12 sm12 md6 right>
                 <v-img
-                    :src="`https://lh3.googleusercontent.com/svWeZpRzby43n3WJbVBzKQizkbuvLAoRdlNdM0qakOB3AZ0Dk5GF-Pm9mgEvdH5gMiFpJ50oHfLqLbA69mSqjKqjamBPzvAvOjkbOw=w0`"
-                    :lazy-src="`https://lh3.googleusercontent.com/svWeZpRzby43n3WJbVBzKQizkbuvLAoRdlNdM0qakOB3AZ0Dk5GF-Pm9mgEvdH5gMiFpJ50oHfLqLbA69mSqjKqjamBPzvAvOjkbOw=w0`"
+                    :src="`/images/sce.png`"
+                    :lazy-src="`/images/sce.png`"
                     position="center">
                     <template v-slot:placeholder>
                         <v-layout fill-height align-center justify-center ma-0>
@@ -39,8 +39,8 @@
             </v-flex>
             <v-flex xs12 sm12 md12 right>
                 <v-img
-                    :src="`https://lh3.googleusercontent.com/0-kRnyocSZgKpLqopqU-mvkMmNgGckw4aWwbiPqlbd4yt-L9ccMd5H2p3fHyXtCIt9XWI1zwBHG0L_nL-CKlDUOy7KpzrgAUDlxM0A=w0`"
-                    :lazy-src="`https://lh3.googleusercontent.com/0-kRnyocSZgKpLqopqU-mvkMmNgGckw4aWwbiPqlbd4yt-L9ccMd5H2p3fHyXtCIt9XWI1zwBHG0L_nL-CKlDUOy7KpzrgAUDlxM0A=w0`"
+                    :src="`/images/sce1.png`"
+                    :lazy-src="`/images/sce1.png`"
                     position="center">
                     <template v-slot:placeholder>
                         <v-layout fill-height align-center justify-center ma-0>
@@ -64,8 +64,8 @@
                     </v-container>
                     <div style="">
                         <v-img
-                            :src="`https://lh3.googleusercontent.com/zG9tmtU51B7DAJxWqj5dSc32bZty6C5mo48vp1Tozqucoo379R5Gz_RDrIfxTy5wF_BZ5n-5M85S9mF_DICltakJI__JDuMhhzStsw=w0`"
-                            :lazy-src="`https://lh3.googleusercontent.com/zG9tmtU51B7DAJxWqj5dSc32bZty6C5mo48vp1Tozqucoo379R5Gz_RDrIfxTy5wF_BZ5n-5M85S9mF_DICltakJI__JDuMhhzStsw=w0`"
+                            :src="`/images/sce2.png`"
+                            :lazy-src="`/images/sce2.png`"
                             >
                             <template v-slot:placeholder>
                                 <v-layout fill-height align-center justify-center ma-0>
@@ -83,8 +83,8 @@
                         <p class="greyd4--text subheading">Get nudges that remind you to follow up and respond to messages, so that nothing slips through the cracks.</p>
                     </v-container>
                     <v-img
-                        :src="`https://lh3.googleusercontent.com/wlf842vsNrbW70WRloE0LzJVOJfoL4lYMbqOEebLudfLr91bLou7Sb6Hu7f5C_uP9femGOjfLdns4B9q5rdzVBHx9NIGvOayPqbvRQ=w0`"
-                        :lazy-src="`https://lh3.googleusercontent.com/wlf842vsNrbW70WRloE0LzJVOJfoL4lYMbqOEebLudfLr91bLou7Sb6Hu7f5C_uP9femGOjfLdns4B9q5rdzVBHx9NIGvOayPqbvRQ=w0`">
+                        :src="`/images/sce3.png`"
+                        :lazy-src="`/images/sce3.png`">
                         <template v-slot:placeholder>
                             <v-layout fill-height align-center justify-center ma-0>
                                 <v-progress-circular indeterminate color="primary"></v-progress-circular>
@@ -103,8 +103,8 @@
             </v-flex>
             <v-flex xs12 sm12 md6 right overflow-x-hidden>
                 <v-img
-                    :src="`https://lh3.googleusercontent.com/eMssnzi4IyoZt6HzMXY08zo331ZHTIkoQxxQHE01r_tdFIRFYDkud-XAXGDZ5xqzzreeOLNoLALdIBkAh5K2Zc_sIe3UXQKs7eH7pQ=w0`"
-                    :lazy-src="`https://lh3.googleusercontent.com/eMssnzi4IyoZt6HzMXY08zo331ZHTIkoQxxQHE01r_tdFIRFYDkud-XAXGDZ5xqzzreeOLNoLALdIBkAh5K2Zc_sIe3UXQKs7eH7pQ=w0`">
+                    :src="`/images/sce4.png`"
+                    :lazy-src="`/images/sce4.png`">
                     <template v-slot:placeholder>
                         <v-layout fill-height align-center justify-center ma-0>
                             <v-progress-circular indeterminate color="primary"></v-progress-circular>
@@ -116,8 +116,8 @@
         <v-layout row wrap align-center class="mx-5 section--padding-144 grey lighten-5">
             <v-flex xs12 sm12 md6 right overflow-x-hidden>
                 <v-img
-                    :src="`https://lh3.googleusercontent.com/ZHgljkXzHMWWG85lNChWkL0ENd93Ia0C4xGx0xA0kMT5CufJXvomTqMgo-vxaAVVFTzkqjDU1kCwg93JdMDdmcojVZdL-JPs_LlmSEk=w0`"
-                    :lazy-src="`https://lh3.googleusercontent.com/ZHgljkXzHMWWG85lNChWkL0ENd93Ia0C4xGx0xA0kMT5CufJXvomTqMgo-vxaAVVFTzkqjDU1kCwg93JdMDdmcojVZdL-JPs_LlmSEk=w0`">
+                    :src="`/images/sce5.png`"
+                    :lazy-src="`/images/sce5.png`">
                     <template v-slot:placeholder>
                         <v-layout fill-height align-center justify-center ma-0>
                             <v-progress-circular indeterminate color="primary"></v-progress-circular>
