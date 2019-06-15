@@ -24,7 +24,7 @@ class Comment extends ResourceForUser
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'body';
 
     /**
      * The columns that should be searched.
@@ -34,6 +34,7 @@ class Comment extends ResourceForUser
     public static $search = [
         'id',
     ];
+    public static $globallySearchable = false;
 
     /**
      * Get the fields displayed by the resource.

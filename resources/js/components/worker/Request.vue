@@ -7,7 +7,8 @@
             </v-btn>
         </v-snackbar>
         <v-layout row justify-center>
-            <v-btn class="primary button-request" v-if="loggedIn && user.job == 0" flat @click="dialog = true">Request</v-btn>
+            <v-btn class="primary button-request" v-if="loggedIn && user.job == 0" flat @click="dialog2 = true">Request
+            </v-btn>
             <v-btn class="primary button-request" v-if="!loggedIn" flat @click="dialog = true" route
                 :to="{name: 'login'}">Log In to request</v-btn>
             <v-dialog v-model="dialog" fullscreen hide-overlay transition="dialog-bottom-transition" scrollable>
@@ -65,17 +66,17 @@
                                     <v-list-tile-title><span class="primary--text title pr-1"
                                             style="vertical-align: inherit;">{{ item.name }}</span>
                                         ({{ item.workers.category.name }})</v-list-tile-title>
-                                    <v-list-tile-sub-title>Email: <span class="black--text"
+                                    <v-list-tile-sub-title v-if="item.email">Email: <span class="black--text"
                                             style="vertical-align: inherit;">{{item.email}}</span>
                                     </v-list-tile-sub-title>
-                                    <v-list-tile-sub-title>Phone: <span class="black--text"
+                                    <v-list-tile-sub-title v-if="item.phone">Phone: <span class="black--text"
                                             style="vertical-align: inherit;">{{item.phone}}</span>
                                     </v-list-tile-sub-title>
                                 </v-list-tile-content>
                             </v-list-tile>
                             <v-list-tile avatar>
                                 <v-list-tile-content>
-                                    <v-list-tile-sub-title>City: <span class="black--text"
+                                    <v-list-tile-sub-title v-if="item.city && item.region">City: <span class="black--text"
                                             style="vertical-align: inherit;">{{item.city.city}}</span> / Region: <span
                                             class="black--text"
                                             style="vertical-align: inherit;">{{item.region.region}}</span>
@@ -111,28 +112,82 @@
                         <v-list three-line subheader>
                             <v-subheader>Orders</v-subheader>
                             <v-slide-x-transition group>
-                            <v-list-tile avatar v-for="order in orders" :key="order.id">
-                                <v-list-tile-action>
-                                    <v-avatar size="64" class="mr-3">
-                                        <v-img v-if="order.user.avatar != null" :src="'/storage/'+order.user.avatar"
-                                            :lazy-src="'/storage/'+order.user.avatar" alt="random image">
+                                <v-list-tile avatar v-for="order in orders" :key="order.id">
+                                    <v-list-tile>
+                                        <v-list-tile-action class="mr-4">
+                                            <v-tooltip v-if="order.is_done == 1" bottom>
+                                                <template v-slot:activator="{ on }">
+                                                    <v-avatar color="teal" v-on="on">
+                                                        <v-icon dark>star</v-icon>
+                                                    </v-avatar>
+                                                </template>
+                                                <span>Accepted</span>
+                                            </v-tooltip>
+                                            <v-tooltip v-if="order.status == 1 && !order.is_done" bottom>
+                                                <template v-slot:activator="{ on }">
+                                                    <v-avatar color="teal" v-on="on">
+                                                        <v-icon dark>check_circle</v-icon>
+                                                    </v-avatar>
+                                                </template>
+                                                <span>Accepted</span>
+                                            </v-tooltip>
+                                            <v-tooltip v-else-if="order.status == 2  && !order.is_done" bottom>
+                                                <template v-slot:activator="{ on }">
+                                                    <v-avatar color="red" v-on="on">
+                                                        <v-icon dark>close</v-icon>
+                                                    </v-avatar>
+                                                </template>
+                                                <span>Declined</span>
+                                            </v-tooltip>
+                                            <v-tooltip v-else-if="!order.is_done" bottom>
+                                                <template v-slot:activator="{ on }">
+                                                    <v-avatar color="orange" v-on="on">
+                                                        <v-icon dark>priority_high</v-icon>
+                                                    </v-avatar>
+                                                </template>
+                                                <span>Pending</span>
+                                            </v-tooltip>
+                                        </v-list-tile-action>
 
-                                            <v-layout slot="placeholder" fill-height align-center justify-center ma-0>
-                                                <v-progress-circular indeterminate color="grey lighten-5">
-                                                </v-progress-circular>
-                                            </v-layout>
+                                    </v-list-tile>
+                                    <v-list-tile>
+                                        <v-list-tile-action>
+                                            <v-avatar size="64" class="mr-3">
+                                                <v-img v-if="order.user.avatar != null"
+                                                    :src="'/storage/'+order.user.avatar"
+                                                    :lazy-src="'/storage/'+order.user.avatar" alt="random image">
 
-                                        </v-img>
-                                    </v-avatar>
-                                </v-list-tile-action>
-                                <v-list-tile-content>
-                                    <v-list-tile-title>{{ order.title }}</v-list-tile-title>
-                                    <v-list-tile-sub-title>{{ order.body }}
-                                    </v-list-tile-sub-title>
-                                    <v-list-tile-sub-title class="primary--text">{{ order.user.name }}
-                                    </v-list-tile-sub-title>
-                                </v-list-tile-content>
-                            </v-list-tile>
+                                                    <v-layout slot="placeholder" fill-height align-center justify-center
+                                                        ma-0>
+                                                        <v-progress-circular indeterminate color="grey lighten-5">
+                                                        </v-progress-circular>
+                                                    </v-layout>
+
+                                                </v-img>
+                                            </v-avatar>
+                                        </v-list-tile-action>
+                                        <v-list-tile-content>
+                                            <v-list-tile-title>{{ order.title }}</v-list-tile-title>
+                                            <v-list-tile-sub-title class="text--primary">{{ order.body }}
+                                            </v-list-tile-sub-title>
+                                            <v-list-tile-sub-title v-if="user.job == 1">{{ order.user.name }}
+                                            </v-list-tile-sub-title>
+                                            <v-list-tile-sub-title v-else>Client: <span class="primary--text">{{ order.user.name }}</span>
+                                            </v-list-tile-sub-title>
+                                        </v-list-tile-content>
+                                    </v-list-tile>
+                                    <v-spacer></v-spacer>
+                                    <v-list-tile v-if="order.status != 2 && order.status != 1 && user.id == order.user.id">
+                                        <v-list-tile-action class="text-xs-right">
+                                            <v-btn class="button-shadow red white--text"
+                                                @click="acceptRequest(order.id, 2)" :disabled="loadingDialog"
+                                                :loading="loadingDialog" flat>
+                                                Declined
+                                            </v-btn>
+                                        </v-list-tile-action>
+                                    </v-list-tile>
+
+                                </v-list-tile>
                             </v-slide-x-transition>
                         </v-list>
                         <v-divider></v-divider>
@@ -244,11 +299,12 @@
                             <v-container grid-list-md>
                                 <v-layout wrap>
                                     <v-flex xs12>
-                                        <v-text-field v-model="requestForm.title" label="Title" color="deep-purple" flat box required></v-text-field>
+                                        <v-text-field v-model="requestForm.title" label="Title" color="deep-purple" flat
+                                            box required></v-text-field>
                                     </v-flex>
                                     <v-flex xs12>
-                                        <v-textarea v-model="requestForm.body" auto-grow  color="deep-purple" flat box label="Body" required
-                                            rows="1"></v-textarea>
+                                        <v-textarea v-model="requestForm.body" auto-grow color="deep-purple" flat box
+                                            label="Body" required rows="1"></v-textarea>
                                     </v-flex>
                                 </v-layout>
                             </v-container>
@@ -258,8 +314,7 @@
                             <v-btn @click="agreement = false, dialog2 = false">
                                 No
                             </v-btn>
-                            <v-btn class="white--text" color="deep-purple accent-4"
-                                @click="request">
+                            <v-btn class="white--text" color="deep-purple accent-4" @click="request">
                                 Yes
                             </v-btn>
                         </v-card-actions>
@@ -271,7 +326,9 @@
 </template>
 
 <script>
-import { request } from 'http';
+    import {
+        request
+    } from 'http';
     export default {
         props: ['item'],
         data() {
@@ -302,7 +359,7 @@ import { request } from 'http';
                 return this.$store.getters.loggedIn
             }
         },
-        mounted(){
+        mounted() {
             this.retrieveUser()
         },
         methods: {
@@ -344,24 +401,49 @@ import { request } from 'http';
                             this.loadingDialog = false
                             this.successMessage = 'Your request has been sent'
                             this.$emit('workers')
+                            this.dialog = true
                         })
                         .catch(error => {
                             console.log(error)
                             this.loadingDialog = false
                         })
-    
+
                     this.requestForm.title = ''
                     this.requestForm.body = ''
                 }, 1000);
             },
-             retrieveUser() {
+            retrieveUser() {
                 this.$store.dispatch('retrieveUser')
-                .then(response => {
+                    .then(response => {
                         this.user = response.data.data
                     })
                     .catch(error => {
                         console.log(error)
                     })
+            },
+            acceptRequest(order, status) {
+                this.loadingDialog = true
+                setTimeout(() => {
+                    axios.defaults.headers.common['Authorization'] = 'Bearer ' + this.$store.state.token
+                    if (this.loggedIn) {
+                        axios.post('/accept-order', {
+                            status: status,
+                            order_id: order
+                        })
+                        .then(response => {
+                            this.snackbar = true
+                            this.dialog2 = false
+                            this.loadingDialog = false
+                            this.successMessage = response.data.message
+                            this.$emit('workers')
+                            this.userRet()
+                        })
+                        .catch(error => {
+                            console.log(error)
+                            this.loadingDialog = false
+                        })
+                    }
+                }, 1000);
             },
         }
     }

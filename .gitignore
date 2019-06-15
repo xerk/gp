@@ -3,7 +3,8 @@
 # /public/storage
 /storage/*.key
 /nova
-/vendor
+!/vendor\eminiarts\nova-permissions/
+/vendor/*
 .env
 .phpunit.result.cache
 Homestead.json

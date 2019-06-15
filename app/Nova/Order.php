@@ -25,7 +25,7 @@ class Order extends ResourceForUser
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'title';
 
     /**
      * The columns that should be searched.
@@ -33,7 +33,7 @@ class Order extends ResourceForUser
      * @var array
      */
     public static $search = [
-        'id',
+        'id', 'title'
     ];
 
     /**

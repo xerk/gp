@@ -36,13 +36,18 @@ class User extends Resource
      */
     public static $title = 'name';
 
+    public function subtitle()
+    {
+        return "email: {$this->email}". "<br>" . "Phone: {$this->phone}";
+    }
+
     /**
      * The columns that should be searched.
      *
      * @var array
      */
     public static $search = [
-        'id', 'name', 'email',
+        'id', 'name', 'email', 'phone'
     ];
 
     /**
@@ -75,7 +80,9 @@ class User extends Resource
 
             Text::make('Phone')
                 ->sortable()
-                ->rules('required', 'max:254'),
+                ->rules('required', 'max:254')
+                ->creationRules('unique:users,phone')
+                ->updateRules('unique:users,phone,{{resourceId}}'),
 
             Select::make('Gender')->options([
                 '1' => 'Male',

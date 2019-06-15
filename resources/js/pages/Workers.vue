@@ -33,9 +33,8 @@
                                                 </v-progress-circular>
                                             </v-layout>
                                         </v-img>
-                                    </v-avatar><span class="title">{{ props.item.name }}</span>
+                                    </v-avatar><span class="subheading">{{ props.item.name }}</span>
                                 </td>
-                                <td class="text-xs-right">{{ props.item.name }}</td>
                                 <td class="text-xs-right"><span class="red--text subheading" style="vertical-align: inherit;">{{ props.item.workers.price }}</span> per hour(s)</td>
                                 <td class="text-xs-right">
                                     <span style="display:none">{{ experience = parseInt(props.item.workers.experience) }}</span>
@@ -81,11 +80,6 @@ import Request from '@/components/worker/Request'
                         align: 'left',
                         sortable: false,
                         value: 'name'
-                    },
-                    {
-                        text: 'Review',
-                        align: 'center',
-                        value: 'review'
                     },
                     {
                         text: 'Price',
